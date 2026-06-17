@@ -27,8 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build latest Circle artifacts
-        run: npm run publish:circle
+      - name: Build renderer
+        run: npm run build
+
+      - name: Generate Circle artifacts
+        run: npm run generate:circle
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
