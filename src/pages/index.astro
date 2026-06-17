@@ -1,0 +1,124 @@
+---
+import IntelligenceDeskLayout from "../layouts/IntelligenceDeskLayout.astro";
+import ColumnCard from "../components/ColumnCard.astro";
+import SectionShell from "../components/SectionShell.astro";
+import EmptyStateCard from "../components/EmptyStateCard.astro";
+import StaleStateCard from "../components/StaleStateCard.astro";
+import ItemCard from "../components/ItemCard.astro";
+
+import { loadDeskView } from "../lib/rendering/load-desk-view";
+import { mapItemToViewModel } from "../lib/rendering/map-item-to-view-model";
+import { orderSectionColumns } from "../lib/rendering/order-section-columns";
+import { selectColumnItems } from "../lib/rendering/select-column-items";
+
+const snapshot = loadDeskView();
+const lastUpdated = new Date(snapshot.published_at).toLocaleString("en-US", {
+  dateStyle: "medium",
+  timeStyle: "short",
+  timeZone: "UTC"
+});
+
+const sectionShellMeta = {
+  llm_status: {
+    eyebrow: "Operational Health",
+    ordinal: "01",
+    tone: "status" as const,
+    guidance: "Use this band to answer: is the tool stable, degraded, or having real service trouble right now?",
+    emphasis: "primary" as const
+  },
+  llm_model_updates: {
+    eyebrow: "Product Change",
+    ordinal: "02",
+    tone: "updates" as const,
+    guidance: "Use this band to answer: what did the provider officially change, and why might it matter to your workflow?",
+    emphasis: "primary" as const
+  },
+  news: {
+    eyebrow: "Market Context",
+    ordinal: "03",
+    tone: "news" as const,
+    guidance: "Use this band when you want broader business and investing context beyond provider-specific status and releases.",
+    emphasis: "secondary" as const
+  }
+};
+---
+
+<IntelligenceDeskLayout>
+  <a class="skip-link" href="#desk-content">Skip to desk content</a>
+  <main class="page-shell" id="desk-content">
+    <section class="intro-shell">
+      <div class="intro-shell__headline">
+        <div>
+          <p class="eyebrow">Private AI intelligence network</p>
+          <h1>Intelligence Desk</h1>
+          <p class="intro-shell__lede">
+            One place to check whether a model is wobbling, what changed across major providers,
+            and which AI business headlines are actually worth your attention.
+          </p>
+        </div>
+        <div class="freshness-card" aria-label="Last updated">
+          <span class="freshness-card__label">Last updated</span>
+          <strong>{lastUpdated} UTC</strong>
+          <p>Snapshot cadence: every 12 hours.</p>
+        </div>
+      </div>
+      <div class="intro-shell__guidance">
+        <p><strong>Start here:</strong> Check `LLM Status` when a tool feels off, `LLM/Model Updates` when something new lands, and `News` when you want the broader market read.</p>
+      </div>
+    </section>
+
+    {snapshot.sections.map((section) => (
+      <SectionShell
+        title={section.title}
+        description={section.description}
+        eyebrow={sectionShellMeta[section.section_key].eyebrow}
+        ordinal={sectionShellMeta[section.section_key].ordinal}
+        tone={sectionShellMeta[section.section_key].tone}
+        guidance={sectionShellMeta[section.section_key].guidance}
+        emphasis={sectionShellMeta[section.section_key].emphasis}
+      >
+        <div class="section-grid" role="list" aria-label={`${section.title} columns`}>
+          {orderSectionColumns(section.section_key, section.columns).map((column) => (
+            <div role="listitem">
+              <ColumnCard title={column.label}>
+              {column.state === "empty" && (
+                <EmptyStateCard
+                  variant={section.section_key === "news" ? "news" : "default"}
+                  title={
+                    section.section_key === "news"
+                      ? "Nothing strong enough to feature"
+                      : "No meaningful items in this window"
+                  }
+                  message={
+                    column.state_message ??
+                    (section.section_key === "news"
+                      ? "This topic stayed intentionally quiet because nothing cleared the relevance bar in this refresh window."
+                      : "Nothing notable to show right now.")
+                  }
+                />
+              )}
+              {column.state === "source_delayed" && (
+                <StaleStateCard
+                  tone="source_delayed"
+                  title="Source check delayed"
+                  message={column.state_message}
+                />
+              )}
+              {column.state === "stale" && (
+                <StaleStateCard
+                  tone="stale"
+                  title="Last verified view"
+                  message={column.state_message}
+                />
+              )}
+              {selectColumnItems(section.section_key, column).map((item) => (
+                <ItemCard item={mapItemToViewModel(item)} />
+              ))}
+              </ColumnCard>
+            </div>
+          ))}
+        </div>
+      </SectionShell>
+    ))}
+  </main>
+</IntelligenceDeskLayout>

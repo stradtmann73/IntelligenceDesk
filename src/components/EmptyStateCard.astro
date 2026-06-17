@@ -1,0 +1,19 @@
+---
+interface Props {
+  variant?: "default" | "news";
+  title?: string;
+  message?: string;
+}
+
+const {
+  variant = "default",
+  title = "Nothing to show right now",
+  message = "Nothing notable to show yet."
+} = Astro.props as Props;
+---
+
+<article class:list={["empty-state-card", `empty-state-card--${variant}`]}>
+  <span class="state-card__label">{variant === "news" ? "Curated Gap" : "Empty"}</span>
+  <h4>{title}</h4>
+  <p>{message}</p>
+</article>

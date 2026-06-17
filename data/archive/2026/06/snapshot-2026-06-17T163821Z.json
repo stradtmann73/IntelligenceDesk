@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-17T16:38:21.439Z",
+  "published_at": "2026-06-17T16:38:21.439Z",
+  "refresh_window_hours": 12,
+  "member_surface": "circle",
+  "renderer_mode": "fallback_preview",
+  "publish_state": "held_stale",
+  "review_summary": {
+    "reviewer_type": "system",
+    "notes": "13 item(s) auto-approved. 0 item(s) require human review. 6 item(s) blocked or suppressed."
+  },
+  "sections": [
+    {
+      "section_key": "llm_status",
+      "title": "LLM Status",
+      "description": "Operational signals from official provider status sources.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "empty",
+          "state_message": "No verified status items were available in this refresh window.",
+          "items": []
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "empty",
+          "state_message": "No verified status items were available in this refresh window.",
+          "items": []
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "empty",
+          "state_message": "No verified status items were available in this refresh window.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "section_key": "llm_model_updates",
+      "title": "LLM/Model Updates",
+      "description": "Official provider changes summarized in plain English.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "stale",
+          "state_message": "Fresh verification was not completed in this window, so the last approved item is shown with a stale warning.",
+          "items": [
+            {
+              "item_id": "update-openai-model",
+              "headline": "Model release notes call out meaningful capability changes",
+              "summary": "This update would tell members what actually changed in practical terms rather than making them decode a dense release log.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/news/",
+              "published_at": "2026-06-16T10:30:00Z",
+              "source_checked_at": "2026-06-16T12:00:00Z",
+              "review_state": "published",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "empty",
+          "state_message": "No meaningful provider changes were approved in this refresh window.",
+          "items": []
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "empty",
+          "state_message": "No meaningful provider changes were approved in this refresh window.",
+          "items": []
+        }
+      ]
+    },
+    {
+      "section_key": "news",
+      "title": "News",
+      "description": "Curated AI business and investing coverage, kept separate from provider updates.",
+      "columns": [
+        {
+          "column_key": "investing_and_finance",
+          "label": "Investing and Finance",
+          "column_type": "topic",
+          "state": "empty",
+          "state_message": "No items cleared the relevance bar in this refresh window.",
+          "items": []
+        },
+        {
+          "column_key": "business_general",
+          "label": "Business General",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-gri",
+              "headline": "Hyperscalers to Get Clarity on How to Speed Access to US Grids",
+              "summary": "Why it matters: Hyperscalers to Get Clarity on How to Speed Access to US Grids.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-17/hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-grids?srnd=phx-ai",
+              "published_at": "2026-06-17T16:38:21.439Z",
+              "source_checked_at": "2026-06-17T16:38:21.439Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "techcrunch-ai-news:google-bets-on-gemini-to-reinvent-the-smart-home-speaker",
+              "headline": "Google bets on Gemini to reinvent the smart home speaker",
+              "summary": "Why it matters: Google bets on Gemini to reinvent the smart home speaker.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/17/google-bets-on-gemini-to-reinvent-the-smart-home-speaker/",
+              "published_at": "2026-06-17T16:38:21.439Z",
+              "source_checked_at": "2026-06-17T16:38:21.439Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "techcrunch-ai-news:collecting-robot-training-data-is-dirty-unglamorous-work-som",
+              "headline": "Collecting robot training data is dirty, unglamorous work. Some AI labs are already paying XDOF to do it.",
+              "summary": "Why it matters: Collecting robot training data is dirty, unglamorous work. Some AI labs are already paying XDOF to do it.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/17/collecting-robot-training-data-is-dirty-unglamorous-work-some-ai-labs-are-already-paying-xdof-to-do-it/",
+              "published_at": "2026-06-17T16:38:21.439Z",
+              "source_checked_at": "2026-06-17T16:38:21.439Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            }
+          ]
+        },
+        {
+          "column_key": "opinion",
+          "label": "Opinion",
+          "column_type": "topic",
+          "state": "empty",
+          "state_message": "No items cleared the relevance bar in this refresh window.",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

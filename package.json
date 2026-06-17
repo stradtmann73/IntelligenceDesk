@@ -1,0 +1,27 @@
+{
+  "name": "intelligence-desk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate:snapshot": "node --enable-source-maps ./scripts/validate-current.ts",
+    "refresh:snapshot": "node --experimental-strip-types ./scripts/refresh-all.ts",
+    "publish:current": "node --experimental-strip-types ./scripts/publish-current.ts",
+    "rollback:snapshot": "node --experimental-strip-types ./scripts/rollback-to-snapshot.ts",
+    "generate:circle": "node --experimental-strip-types ./scripts/generate-circle-facing.ts",
+    "publish:circle": "npm run refresh:snapshot && npm run build && npm run generate:circle"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.0.0"
+  }
+}

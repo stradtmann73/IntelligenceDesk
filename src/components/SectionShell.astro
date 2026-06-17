@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  ordinal?: string;
+  tone?: "status" | "updates" | "news";
+  guidance?: string;
+  emphasis?: "primary" | "secondary";
+}
+
+const {
+  title,
+  description,
+  eyebrow,
+  ordinal,
+  tone = "status",
+  guidance,
+  emphasis = "primary"
+} = Astro.props as Props;
+---
+
+<section
+  class:list={["section-shell", `section-shell--${tone}`, `section-shell--${emphasis}`]}
+  aria-label={title}
+  aria-roledescription="information section"
+>
+  <header class="section-shell__header">
+    <div class="section-shell__eyebrow-row">
+      {eyebrow && <p class="section-shell__eyebrow">{eyebrow}</p>}
+      {ordinal && <span class="section-shell__ordinal">{ordinal}</span>}
+    </div>
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
+    {guidance && <p class="section-shell__guidance">{guidance}</p>}
+  </header>
+  <div class="section-shell__body">
+    <slot />
+  </div>
+</section>

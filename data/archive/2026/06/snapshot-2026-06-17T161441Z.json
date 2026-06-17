@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-17T16:14:41.084Z",
+  "published_at": "2026-06-17T16:14:41.084Z",
+  "refresh_window_hours": 12,
+  "member_surface": "circle",
+  "renderer_mode": "fallback_preview",
+  "publish_state": "held_stale",
+  "review_summary": {
+    "reviewer_type": "system",
+    "notes": "36 item(s) auto-approved. 0 item(s) require human review. 0 item(s) blocked or suppressed."
+  },
+  "sections": [
+    {
+      "section_key": "llm_status",
+      "title": "LLM Status",
+      "description": "Operational signals from official provider status sources.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-status:openai-status-snapshot",
+              "headline": "OpenAI status snapshot",
+              "summary": "Official status read: OpenAI Status Subscribe to updates We’re currently experiencing issues FedRAMP FedRAMP workspaces and API orgs have degraded performance We are still investigating the issue for the listed services. Investigating · Ongoing for 1 day · Affects FedRAMP System…",
+              "source_name": "OpenAI Status",
+              "source_url": "https://status.openai.com/",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "openai",
+              "status_label": "Degraded"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-status:gemini-status-snapshot",
+              "headline": "Gemini status snapshot",
+              "summary": "Official status read: Google Cloud Service Health .tabs{display:block;margin:24px 0} body{font-family:open sans,arial,sans-serif;margin:8px 0}main{margin:auto;max-width:978px}.banner-margin{margin-bottom:24px} (function(){var trackingId='UA-177437757-6';(function(i,s,o,g,r,a,m){…",
+              "source_name": "Gemini API Status",
+              "source_url": "https://status.cloud.google.com/",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "gemini",
+              "status_label": "Stable"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-status:claude-status-snapshot",
+              "headline": "Claude status snapshot",
+              "summary": "Official status read: Claude Status /* Dynamic Font Stack based on Feature Flag */ /* Using Atlassian Sans & Mono */ :root { --font-stack-a: \"Atlassian Sans\", \"Helvetica Neue\", Helvetica, Arial, Sans-Serif; --font-stack-b: \"Atlassian Mono\", \"SFMono-Medium\", \"SF Mono\", \"Segoe UI…",
+              "source_name": "Claude Status",
+              "source_url": "https://status.claude.com/",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "claude",
+              "status_label": "Stable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "llm_model_updates",
+      "title": "LLM/Model Updates",
+      "description": "Official provider changes summarized in plain English.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "stale",
+          "state_message": "Fresh verification was not completed in this window, so the last approved item is shown with a stale warning.",
+          "items": [
+            {
+              "item_id": "update-openai-model",
+              "headline": "Model release notes call out meaningful capability changes",
+              "summary": "This update would tell members what actually changed in practical terms rather than making them decode a dense release log.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/news/",
+              "published_at": "2026-06-16T10:30:00Z",
+              "source_checked_at": "2026-06-16T12:00:00Z",
+              "review_state": "published",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-updates:gemini-changelog-snapshot",
+              "headline": "Gemini changelog snapshot",
+              "summary": "Plain-English takeaway: Release notes &nbsp;|&nbsp; Gemini API &nbsp;|&nbsp; Google AI for Developers { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Release notes\" } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"@type…",
+              "source_name": "Gemini API Release Notes",
+              "source_url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "gemini",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-updates:claude-release-notes-snapshot",
+              "headline": "Claude release notes snapshot",
+              "summary": "Plain-English takeaway: Claude Platform - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources   API reference English   Console Log in    Search... ⌘K Re…",
+              "source_name": "Claude API Release Notes",
+              "source_url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Important"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "news",
+      "title": "News",
+      "description": "Curated AI business and investing coverage, kept separate from provider updates.",
+      "columns": [
+        {
+          "column_key": "investing_and_finance",
+          "label": "Investing and Finance",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "cnbc-ai-news:how-roku-fits-into-fox-apos-s-future-and-what-investors-are-",
+              "headline": "How Roku fits into Fox&apos;s future — and what investors are missing about the deal",
+              "summary": "Why it matters: Fox's stock dropped following its announcement that it will acquire Roku for $22 billion. Analysts still think it's a good deal.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/16/fox-roku-stock-investors-streaming.html",
+              "published_at": "2026-06-16T22:14:10.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:carvana-is-expanding-into-new-vehicles-the-implications-coul",
+              "headline": "Carvana is expanding into new vehicles. The implications could reshape the U.S. automotive retail market",
+              "summary": "Why it matters: Carvana has bought seven new vehicle franchises since last year that primarily sell Stellantis' Chrysler, Dodge, Jeep and Ram brands.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/16/carvana-new-cars-dealerships.html",
+              "published_at": "2026-06-16T15:51:53.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:kfc-leans-into-boneless-chicken-new-drinks-as-chain-tries-to",
+              "headline": "KFC leans into boneless chicken, new drinks as chain tries to regain market share",
+              "summary": "Why it matters: KFC is facing more competition from legacy giants and upstarts alike, thanks to the growing global popularity of chicken.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/15/kfc-menu-chicken.html",
+              "published_at": "2026-06-15T13:32:06.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            }
+          ]
+        },
+        {
+          "column_key": "business_general",
+          "label": "Business General",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:bloomberg-ai-topic-snapshot",
+              "headline": "Bloomberg AI topic snapshot",
+              "summary": "Why it matters: AI - Bloomberg /* Declare CSS layer order before any stylesheets load. */ /* This must be an inline &lt;style&gt; in the document head so */ /* it survives Next.js hydration style-tag replacement and */ /* always comes first, guaranteeing tailwind-base has the */…",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/ai",
+              "published_at": "2026-06-17T16:14:41.084Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "cnbc-ai-news:uniqure-to-seek-fda-approval-for-huntington-apos-s-disease-g",
+              "headline": "UniQure to seek FDA approval for Huntington&apos;s disease gene therapy after previous clash with agency",
+              "summary": "Why it matters: The announcement comes months after UniQure became embroiled in a public debate with FDA leaders over the clinical trial data supporting its application.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/17/huntingtons-disease-drugmaker-uniqure-to-seek-fda-ok-for-gene-therapy.html",
+              "published_at": "2026-06-17T16:12:05.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "cnbc-ai-news:the-private-space-race-is-spurring-a-luxury-hotel-land-grab-",
+              "headline": "The private space race is spurring a luxury hotel land grab for Florida oceanfront property",
+              "summary": "Why it matters: The rise of the private space industry, with companies like SpaceX and Blue Origin, has spurred demand for commercial real estate on Florida's space coast.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/17/space-race-luxury-hotels-florida-coast.html",
+              "published_at": "2026-06-17T14:40:49.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            }
+          ]
+        },
+        {
+          "column_key": "opinion",
+          "label": "Opinion",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "cnbc-ai-news:target-walmart-and-amazon-among-brands-losing-lgbtq-consumer",
+              "headline": "Target, Walmart and Amazon among brands losing LGBTQ+ consumer spending, new survey says",
+              "summary": "Why it matters: LGBTQ+ consumers are shifting spending toward companies they view as supporting DEI and away from those seen as retreating, HRC survey finds.",
+              "source_name": "CNBC AI News",
+              "source_url": "https://www.cnbc.com/2026/06/17/target-walmart-amazon-lgbtq-consumer-spending.html",
+              "published_at": "2026-06-17T16:03:47.000Z",
+              "source_checked_at": "2026-06-17T16:14:41.084Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "opinion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

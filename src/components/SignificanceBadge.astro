@@ -1,0 +1,13 @@
+---
+interface Props {
+  label: string;
+  tone?: "minor" | "notable" | "important" | "watch-closely";
+}
+
+const { label, tone = "notable" } = Astro.props as Props;
+---
+
+<span class:list={["significance-badge", `significance-badge--${tone}`]} aria-label={`Significance: ${label}`}>
+  <span class="badge-prefix">Signal</span>
+  <span>{label}</span>
+</span>

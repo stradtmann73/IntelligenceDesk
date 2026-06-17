@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-17T19:07:21.376Z",
+  "published_at": "2026-06-17T19:07:21.376Z",
+  "refresh_window_hours": 12,
+  "member_surface": "circle",
+  "renderer_mode": "fallback_preview",
+  "publish_state": "held_stale",
+  "review_summary": {
+    "reviewer_type": "system",
+    "notes": "45 item(s) auto-approved. 0 item(s) require human review. 12 item(s) blocked or suppressed."
+  },
+  "sections": [
+    {
+      "section_key": "llm_status",
+      "title": "LLM Status",
+      "description": "Operational signals from official provider status sources.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-status:openai-status-snapshot",
+              "headline": "OpenAI status snapshot",
+              "summary": "Official status read: OpenAI Status Subscribe to updates We’re currently experiencing issues FedRAMP FedRAMP workspaces and API orgs have degraded performance We are still investigating the issue for the listed services. Investigating · Ongoing for 1 day · Affects FedRAMP Syst...",
+              "source_name": "OpenAI Status",
+              "source_url": "https://status.openai.com/",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "openai",
+              "status_label": "Degraded"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-status:gemini-status-snapshot",
+              "headline": "Gemini status snapshot",
+              "summary": "Official status read: Google Cloud Service Health Console Service Health This page provides status information on the services that are part of Google Cloud. Check back here to view the current status of the services listed below. If you are experiencing an issue not listed he...",
+              "source_name": "Gemini API Status",
+              "source_url": "https://status.cloud.google.com/",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "gemini",
+              "status_label": "Stable"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-status:claude-status-snapshot",
+              "headline": "Claude status snapshot",
+              "summary": "Official status read: Claude Status Subscribe to Updates Subscribe x Get email notifications whenever Claude creates , updates or resolves an incident. Email address: Enter OTP: Resend OTP in: seconds Didn't receive the OTP? Resend OTP By subscribing you agree to our Privacy P...",
+              "source_name": "Claude Status",
+              "source_url": "https://status.claude.com/",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "claude",
+              "status_label": "Stable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "llm_model_updates",
+      "title": "LLM/Model Updates",
+      "description": "Official provider changes summarized in plain English.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-news-rss:introducing-the-openai-partner-network",
+              "headline": "Introducing the OpenAI Partner Network",
+              "summary": "Plain-English takeaway: OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/introducing-openai-partner-network",
+              "published_at": "2026-06-14T17:00:00.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "openai-news-rss:how-preply-combines-ai-and-human-tutors-to-personalize-learn",
+              "headline": "How Preply combines AI and human tutors to personalize learning",
+              "summary": "Plain-English takeaway: Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/preply",
+              "published_at": "2026-06-12T00:00:00.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "openai-news-rss:a-near-autonomous-ai-chemist-improves-a-challenging-reaction",
+              "headline": "A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry",
+              "summary": "Plain-English takeaway: OpenAI and Molecule.one show how a near-autonomous AI chemist using GPT-5.4 improved a key drug-making reaction, advancing medicinal chemistry research.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/ai-chemist-improves-reaction",
+              "published_at": "2026-06-17T10:00:00.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Notable"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-release-notes:gemini-release-notes-snapshot",
+              "headline": "Gemini release notes snapshot",
+              "summary": "Plain-English takeaway: Gemini Apps’ release updates & improvements Skip to main content For Students Features Gemini Live Image Generation Video Generation Music Generation Deep Research Gemini Spark Personal Intelligence Daily Brief Canvas Gemini in Chrome Explore Subscripti...",
+              "source_name": "Gemini Release Notes",
+              "source_url": "https://gemini.google/release-notes/",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "gemini",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-release-notes:claude-release-notes-snapshot",
+              "headline": "Claude release notes snapshot",
+              "summary": "Plain-English takeaway: Release notes | Claude Help Center Skip to main content API Docs Release Notes How to Get Support English Français Deutsch Bahasa Indonesia Italiano 日本語 한국어 Português Pусский 简体中文 Español 繁體中文 English API Docs Release Notes How to Get Support English Fr...",
+              "source_name": "Claude Release Notes",
+              "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "claude-code-whats-new:claude-code-what-s-new-snapshot",
+              "headline": "Claude Code what's new snapshot",
+              "summary": "Plain-English takeaway: What's new - Claude Code Docs Documentation Index Fetch the complete documentation index at: /docs/llms.txt Use this file to discover all available pages before exploring further. Skip to main content Claude Code Docs home page span]:line-clamp-1 overfl...",
+              "source_name": "Claude Code What's New",
+              "source_url": "https://code.claude.com/docs/en/whats-new",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Minor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "news",
+      "title": "News",
+      "description": "Curated AI business and investing coverage, kept separate from provider updates.",
+      "columns": [
+        {
+          "column_key": "investing_and_finance",
+          "label": "Investing and Finance",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "techcrunch-ai-news:world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-ama",
+              "headline": "World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names",
+              "summary": "Why it matters: World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:allbirds-continues-ai-pivot-with-name-change-and-ceo-hire-se",
+              "headline": "Allbirds continues AI pivot with name change and CEO hire, sending stock soaring",
+              "summary": "Why it matters: Allbirds became NewBird AI in April and said it would trade shoes for AI compute infrastructure.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/17/allbirds-bird-ai-smartbird-ceo.html",
+              "published_at": "2026-06-17T17:15:53.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:spacex-stock-sinks-5-losing-momentum-after-a-multiday-rally",
+              "headline": "SpaceX stock sinks 5%, losing momentum after a multiday rally",
+              "summary": "Why it matters: Elon Musk's space and AI company has seen its stock surge since its blockbuster IPO on Friday.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/17/spacex-stock-elon-musk-market-cap.html",
+              "published_at": "2026-06-17T14:55:46.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            }
+          ]
+        },
+        {
+          "column_key": "business_general",
+          "label": "Business General",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:ai-health-startup-wants-to-assist-half-of-latin-american-doc",
+              "headline": "AI Health Startup Wants to Assist Half of Latin American Doctors",
+              "summary": "Why it matters: AI Health Startup Wants to Assist Half of Latin American Doctors.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-17/ai-health-startup-wants-to-assist-half-of-latin-american-doctors?srnd=phx-ai",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "bloomberg-ai-news:hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-gri",
+              "headline": "Hyperscalers to Get Clarity on How to Speed Access to US Grids",
+              "summary": "Why it matters: Hyperscalers to Get Clarity on How to Speed Access to US Grids.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-17/hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-grids?srnd=phx-ai",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "bloomberg-ai-news:ian-shiver-for-bloomberg-businessweek-prop-stylist-kelsi-win",
+              "headline": "Ian Shiver for Bloomberg Businessweek. Prop Stylist: Kelsi Windmiller",
+              "summary": "Why it matters: Ian Shiver for Bloomberg Businessweek. Prop Stylist: Kelsi Windmiller.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/features/2026-peptide-legalization-gold-rush/?srnd=phx-ai",
+              "published_at": "2026-06-17T19:07:21.376Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            }
+          ]
+        },
+        {
+          "column_key": "opinion",
+          "label": "Opinion",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "cnbc-ai-news:databricks-sales-growth-tops-80-but-margin-are-shrinking-fro",
+              "headline": "Databricks sales growth tops 80%, but margin are shrinking from swarm of AI agents",
+              "summary": "Why it matters: Databricks is seeing higher growth as AI agents assist with data analysis, but all that activity is significantly increasing costs.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/16/databricks-revenue-growth-tops-80percent-to-6point9-billion-annualized.html",
+              "published_at": "2026-06-16T22:25:28.000Z",
+              "source_checked_at": "2026-06-17T19:07:21.376Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "opinion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

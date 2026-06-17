@@ -1,0 +1,26 @@
+---
+interface Props {
+  sourceName: string;
+  sourceUrl: string;
+  publishedAt: string;
+}
+
+const { sourceName, sourceUrl, publishedAt } = Astro.props as Props;
+
+const formattedTimestamp = new Date(publishedAt).toLocaleString("en-US", {
+  dateStyle: "medium",
+  timeStyle: "short",
+  timeZone: "UTC"
+});
+---
+
+<div class="metadata-row">
+  <span class="metadata-pill">
+    <span class="metadata-pill__label">Source</span>
+    <a href={sourceUrl} target="_blank" rel="noreferrer">{sourceName}</a>
+  </span>
+  <span class="metadata-pill">
+    <span class="metadata-pill__label">Published</span>
+    <span>{formattedTimestamp} UTC</span>
+  </span>
+</div>

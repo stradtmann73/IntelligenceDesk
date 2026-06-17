@@ -1,0 +1,52 @@
+---
+import type { DeskItemViewModel } from "../lib/rendering/map-item-to-view-model";
+
+import MetadataRow from "./MetadataRow.astro";
+import SignificanceBadge from "./SignificanceBadge.astro";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Props {
+  item: DeskItemViewModel;
+}
+
+const { item } = Astro.props as Props;
+---
+
+<article
+  class:list={[
+    "item-card",
+    item.cardKind && `item-card--${item.cardKind}`,
+    item.statusTone && `item-card--${item.statusTone}`,
+    item.significanceTone && `item-card--${item.significanceTone}`
+  ]}
+  aria-label={item.headline}
+>
+  <div class="item-card__topline">
+    {item.badgeKind === "status" && item.badgeLabel && (
+      <StatusBadge label={item.badgeLabel} tone={item.statusTone} />
+    )}
+    {item.badgeKind === "significance" && item.badgeLabel && (
+      <SignificanceBadge label={item.badgeLabel} tone={item.significanceTone} />
+    )}
+  </div>
+  <h4 class="item-card__headline">
+    <a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.headline}</a>
+  </h4>
+  {item.cardKind === "news" && item.sourcePrefix && (
+    <p class="item-card__source-forward">
+      <span class="item-card__source-prefix">{item.sourcePrefix}:</span>
+      <a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName}</a>
+    </p>
+  )}
+  <p class="item-card__summary">
+    {item.summaryPrefix && <span class="item-card__summary-prefix">{item.summaryPrefix}:</span>}
+    {item.summary}
+  </p>
+  <div class="item-card__footer">
+    <MetadataRow
+      sourceName={item.sourceName}
+      sourceUrl={item.sourceUrl}
+      publishedAt={item.publishedAt}
+    />
+  </div>
+</article>

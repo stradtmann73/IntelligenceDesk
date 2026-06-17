@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<article class="column-card" aria-label={title}>
+  <header class="column-card__header">
+    <h3 tabindex="-1">{title}</h3>
+  </header>
+  <div class="column-card__body">
+    <slot />
+  </div>
+</article>
