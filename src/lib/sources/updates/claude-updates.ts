@@ -6,16 +6,10 @@ import {
   type SourceFetchContext
 } from "../shared/source-result.ts";
 import { fetchUrl } from "../shared/fetch-url.ts";
-import { extractRelevantWindow } from "../shared/normalize-html.ts";
-
-const claudeUpdateCues = [
-  "release notes",
-  "claude",
-  "model",
-  "improvement",
-  "updated",
-  "what's new"
-];
+import {
+  cleanSourceSummary,
+  summarizeText
+} from "../shared/normalize-html.ts";
 
 export const claudeUpdatesSource = defineSource({
   key: "claude-release-notes",
@@ -45,10 +39,15 @@ export async function fetchClaudeUpdates(
     });
   }
 
+  const headline = "Claude release notes";
+  const description = cleanSourceSummary(
+    "Official Anthropic release notes covering Claude product changes, usability improvements, and rollout updates."
+  );
+
   return buildFetchSuccess(source, context, [
     {
-      headline: "Claude release notes snapshot",
-      summary: extractRelevantWindow(response.body, claudeUpdateCues, 280),
+      headline,
+      summary: summarizeText(description, 220),
       sourceUrl: source.canonicalUrl,
       rawText: response.body
     }

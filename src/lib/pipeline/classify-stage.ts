@@ -9,6 +9,15 @@ function inferStatusLabel(item: CandidateStatusItem): StatusLabel {
   const haystack = buildTextHaystack(item);
 
   if (
+    haystack.includes("resolved") &&
+    !haystack.includes("investigating") &&
+    !haystack.includes("identified") &&
+    !haystack.includes("monitoring")
+  ) {
+    return "Recently unstable";
+  }
+
+  if (
     haystack.includes("outage") ||
     haystack.includes("unavailable") ||
     haystack.includes("major incident") ||
@@ -27,12 +36,7 @@ function inferStatusLabel(item: CandidateStatusItem): StatusLabel {
     return "Degraded";
   }
 
-  if (
-    haystack.includes("recent") ||
-    haystack.includes("history") ||
-    haystack.includes("resolved") ||
-    haystack.includes("last verified")
-  ) {
+  if (haystack.includes("recent") || haystack.includes("history") || haystack.includes("last verified")) {
     return "Recently unstable";
   }
 

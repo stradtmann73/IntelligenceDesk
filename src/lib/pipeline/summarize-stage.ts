@@ -7,17 +7,17 @@ function stripTrailingPunctuation(input: string): string {
 
 function buildStatusSummary(item: CandidateItem): string {
   const base = stripTrailingPunctuation(item.summary);
-  return summarizeText(`Official status read: ${base}.`, 280);
+  return summarizeText(`${base}.`, 240);
 }
 
 function buildUpdateSummary(item: CandidateItem): string {
   const base = stripTrailingPunctuation(item.summary);
-  return summarizeText(`Plain-English takeaway: ${base}.`, 280);
+  return summarizeText(`${base}.`, 240);
 }
 
 function buildNewsSummary(item: CandidateItem): string {
   const base = stripTrailingPunctuation(item.summary);
-  return summarizeText(`Why it matters: ${base}.`, 280);
+  return summarizeText(`${base}.`, 240);
 }
 
 export function summarizeCandidateItem(item: CandidateItem): CandidateItem {

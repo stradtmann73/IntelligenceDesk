@@ -6,16 +6,13 @@ import {
   type SourceFetchContext
 } from "../shared/source-result.ts";
 import { fetchUrl } from "../shared/fetch-url.ts";
-import { extractRelevantWindow } from "../shared/normalize-html.ts";
-
-const claudeCodeUpdateCues = [
-  "what's new",
-  "claude code",
-  "release",
-  "updated",
-  "model",
-  "tool"
-];
+import {
+  cleanHeadlineText,
+  cleanSourceSummary,
+  extractMetaContent,
+  extractTitleTag,
+  summarizeText
+} from "../shared/normalize-html.ts";
 
 export const claudeCodeUpdatesSource = defineSource({
   key: "claude-code-whats-new",
@@ -45,10 +42,20 @@ export async function fetchClaudeCodeUpdates(
     });
   }
 
+  const headline =
+    cleanHeadlineText(extractTitleTag(response.body) ?? "Claude Code what's new")
+      .replace(/\s*-\s*Claude Code Docs/i, "")
+      .trim() || "Claude Code what's new";
+
+  const description = cleanSourceSummary(
+    extractMetaContent(response.body, ["description", "og:description"]) ??
+    "Official Claude Code digest covering recent tooling features, demos, and workflow improvements."
+  );
+
   return buildFetchSuccess(source, context, [
     {
-      headline: "Claude Code what's new snapshot",
-      summary: extractRelevantWindow(response.body, claudeCodeUpdateCues, 280),
+      headline,
+      summary: summarizeText(description, 220),
       sourceUrl: source.canonicalUrl,
       rawText: response.body
     }

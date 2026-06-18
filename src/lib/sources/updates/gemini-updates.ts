@@ -6,16 +6,11 @@ import {
   type SourceFetchContext
 } from "../shared/source-result.ts";
 import { fetchUrl } from "../shared/fetch-url.ts";
-import { extractRelevantWindow } from "../shared/normalize-html.ts";
-
-const geminiUpdateCues = [
-  "release notes",
-  "gemini",
-  "google ai studio",
-  "api",
-  "model",
-  "updated"
-];
+import {
+  cleanSourceSummary,
+  extractMetaContent,
+  summarizeText
+} from "../shared/normalize-html.ts";
 
 export const geminiUpdatesSource = defineSource({
   key: "gemini-release-notes",
@@ -45,10 +40,17 @@ export async function fetchGeminiUpdates(
     });
   }
 
+  const headline = "Gemini release notes";
+
+  const description = cleanSourceSummary(
+    extractMetaContent(response.body, ["description", "og:description"]) ??
+    "Official Gemini release notes covering feature updates, access changes, and generative AI improvements."
+  );
+
   return buildFetchSuccess(source, context, [
     {
-      headline: "Gemini release notes snapshot",
-      summary: extractRelevantWindow(response.body, geminiUpdateCues, 280),
+      headline,
+      summary: summarizeText(description, 220),
       sourceUrl: source.canonicalUrl,
       rawText: response.body
     }

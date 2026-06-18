@@ -1,6 +1,10 @@
 import { routeNewsTopic } from "../sources/news/topic-routing.ts";
 import { getSourceByKey } from "../sources/registry.ts";
-import { summarizeText } from "../sources/shared/normalize-html.ts";
+import {
+  cleanHeadlineText,
+  cleanSourceSummary,
+  summarizeText
+} from "../sources/shared/normalize-html.ts";
 import type {
   NewsTopicKey,
   ProviderKey,
@@ -91,7 +95,9 @@ function buildItemId(sourceKey: string, raw: RawSourceItem): string {
 }
 
 function normalizeSummary(raw: RawSourceItem): string {
-  const sourceText = raw.summary?.trim() || raw.rawText?.trim() || raw.headline.trim();
+  const sourceText = cleanSourceSummary(
+    raw.summary?.trim() || raw.rawText?.trim() || raw.headline.trim()
+  );
   return summarizeText(sourceText, 280);
 }
 
@@ -119,7 +125,7 @@ function normalizeCandidate(
     };
   }
 
-  const headline = raw.headline.trim();
+  const headline = cleanHeadlineText(raw.headline);
   if (!headline) {
     return {
       source_key: result.sourceKey,

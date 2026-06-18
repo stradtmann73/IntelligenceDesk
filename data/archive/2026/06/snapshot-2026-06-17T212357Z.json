@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-06-18T13:42:11.481Z",
-  "published_at": "2026-06-18T13:42:11.481Z",
+  "generated_at": "2026-06-17T21:23:57.090Z",
+  "published_at": "2026-06-17T21:23:57.090Z",
   "refresh_window_hours": 12,
   "member_surface": "circle",
   "renderer_mode": "fallback_preview",
   "publish_state": "held_stale",
   "review_summary": {
     "reviewer_type": "system",
-    "notes": "42 item(s) auto-approved. 3 item(s) require human review. 12 item(s) blocked or suppressed."
+    "notes": "45 item(s) auto-approved. 0 item(s) require human review. 12 item(s) blocked or suppressed."
   },
   "sections": [
     {
@@ -23,13 +23,13 @@
           "state": "ready",
           "items": [
             {
-              "item_id": "openai-status:fedramp-workspaces-and-api-orgs-have-degraded-performance",
-              "headline": "FedRAMP workspaces and API orgs have degraded performance",
-              "summary": "Status: Investigating.",
+              "item_id": "openai-status:openai-status",
+              "headline": "OpenAI status",
+              "summary": "Official status read: We’re currently experiencing issues FedRAMP FedRAMP workspaces and API orgs have degraded performance We are still investigating the issue for the listed services. Investigating · Ongoing for 2 days · Affects FedRAMP System status Mar 2026 - Jun 2026 APIs...",
               "source_name": "OpenAI Status",
-              "source_url": "https://status.openai.com//incidents/01KV6NGBYE50GK3TRXHD2EMTXA",
-              "published_at": "2026-06-17T01:24:25.000Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_url": "https://status.openai.com/",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "status",
               "provider_or_topic": "openai",
@@ -46,11 +46,11 @@
             {
               "item_id": "gemini-status:gemini-status",
               "headline": "Gemini status",
-              "summary": "No active Gemini API incident is visible in the official Google Cloud incident feed in this snapshot.",
+              "summary": "Official status read: Service Health Console Service Health This page provides status information on the services that are part of Google Cloud. Check back here to view the current status of the services listed below. If you are experiencing an issue not listed here, please co...",
               "source_name": "Gemini API Status",
-              "source_url": "https://status.cloud.google.com/incidents.json",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_url": "https://status.cloud.google.com/",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "status",
               "provider_or_topic": "gemini",
@@ -65,17 +65,17 @@
           "state": "ready",
           "items": [
             {
-              "item_id": "claude-status:service-disruption-on-claude-services",
-              "headline": "Service disruption on Claude services",
-              "summary": "Status: Resolved. The issue affecting Claude services has been resolved. Impact occurred from 06:55 to 07:40 UTC.",
+              "item_id": "claude-status:claude-status",
+              "headline": "Claude status",
+              "summary": "Official status read: No active issue is visible on the Claude status page in this snapshot.",
               "source_name": "Claude Status",
-              "source_url": "https://status.claude.com/incidents/jlbvcpfwwq8z",
-              "published_at": "2026-06-18T08:19:22.000Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_url": "https://status.claude.com/",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "status",
               "provider_or_topic": "claude",
-              "status_label": "Recently unstable"
+              "status_label": "Stable"
             }
           ]
         }
@@ -95,11 +95,11 @@
             {
               "item_id": "openai-news-rss:introducing-lifescibench",
               "headline": "Introducing LifeSciBench",
-              "summary": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
+              "summary": "Plain-English takeaway: Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
               "source_name": "OpenAI News",
               "source_url": "https://openai.com/index/introducing-life-sci-bench",
               "published_at": "2026-06-17T00:00:00.000Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "openai",
@@ -108,11 +108,11 @@
             {
               "item_id": "openai-news-rss:introducing-the-openai-partner-network",
               "headline": "Introducing the OpenAI Partner Network",
-              "summary": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
+              "summary": "Plain-English takeaway: OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
               "source_name": "OpenAI News",
               "source_url": "https://openai.com/index/introducing-openai-partner-network",
               "published_at": "2026-06-14T17:00:00.000Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "openai",
@@ -121,11 +121,11 @@
             {
               "item_id": "openai-news-rss:how-preply-combines-ai-and-human-tutors-to-personalize-learn",
               "headline": "How Preply combines AI and human tutors to personalize learning",
-              "summary": "Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
+              "summary": "Plain-English takeaway: Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
               "source_name": "OpenAI News",
               "source_url": "https://openai.com/index/preply",
               "published_at": "2026-06-12T00:00:00.000Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "openai",
@@ -142,11 +142,11 @@
             {
               "item_id": "gemini-release-notes:gemini-release-notes",
               "headline": "Gemini release notes",
-              "summary": "Explore the latest updates from Gemini Apps - including improvements in generative AI capabilities, expanded access, and more.",
+              "summary": "Plain-English takeaway: For Students Features Gemini Live Image Generation Video Generation Music Generation Deep Research Gemini Spark Personal Intelligence Daily Brief Canvas Gemini in Chrome Ex.",
               "source_name": "Gemini Release Notes",
               "source_url": "https://gemini.google/release-notes/",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "gemini",
@@ -163,24 +163,24 @@
             {
               "item_id": "claude-release-notes:claude-release-notes",
               "headline": "Claude release notes",
-              "summary": "Official Anthropic release notes covering Claude product changes, usability improvements, and rollout updates.",
+              "summary": "Plain-English takeaway: Release notes | Claude Help Center Skip to main content API Docs Release Notes How to Get Support English Français Deutsch Bahasa Indonesia Italiano 日本語 한국어 Português Pусский 简体中文 Español 繁體中文 English API Docs Release Notes How to Get Support English Fr...",
               "source_name": "Claude Release Notes",
               "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "claude",
               "significance_tag": "Important"
             },
             {
-              "item_id": "claude-code-whats-new:what-s-new",
-              "headline": "What's new",
-              "summary": "A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.",
+              "item_id": "claude-code-whats-new:claude-code-what-s-new",
+              "headline": "Claude Code what's new",
+              "summary": "Plain-English takeaway: Claude Code Docs home page span]:lin.",
               "source_name": "Claude Code What's New",
               "source_url": "https://code.claude.com/docs/en/whats-new",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "update",
               "provider_or_topic": "claude",
@@ -202,25 +202,13 @@
           "state": "ready",
           "items": [
             {
-              "item_id": "bloomberg-ai-news:accenture-forecasts-lower-revenue-on-ai-upheaval-mideast-war",
-              "headline": "Accenture Forecasts Lower Revenue on AI Upheaval, Mideast War",
-              "summary": "Accenture Forecasts Lower Revenue on AI Upheaval, Mideast War.",
-              "source_name": "Bloomberg AI",
-              "source_url": "https://www.bloomberg.com/news/articles/2026-06-18/accenture-s-outlook-disappoints-in-uncertain-consultancy-market?srnd=phx-ai",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
-              "review_state": "approved",
-              "item_type": "news",
-              "provider_or_topic": "investing_and_finance"
-            },
-            {
               "item_id": "techcrunch-ai-news:nea-s-tiffany-luck-on-ai-ipos-personal-agents-and-the-roi-re",
               "headline": "NEA’s Tiffany Luck on AI IPOs, personal agents, and the ROI reckoning",
-              "summary": "NEA’s Tiffany Luck on AI IPOs, personal agents, and the ROI reckoning.",
+              "summary": "Why it matters: NEA’s Tiffany Luck on AI IPOs, personal agents, and the ROI reckoning.",
               "source_name": "TechCrunch AI",
               "source_url": "https://techcrunch.com/podcast/neas-tiffany-luck-on-ai-ipos-personal-agents-and-the-roi-reckoning/",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "news",
               "provider_or_topic": "investing_and_finance"
@@ -228,11 +216,23 @@
             {
               "item_id": "techcrunch-ai-news:world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-ama",
               "headline": "World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names",
-              "summary": "World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names.",
+              "summary": "Why it matters: World model maker Odyssey nabs $1.45B valuation backed by Amazon and other big names.",
               "source_name": "TechCrunch AI",
               "source_url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:spacex-posts-first-losing-day-as-stock-sinks-5-losing-moment",
+              "headline": "SpaceX posts first losing day as stock sinks 5%, losing momentum after a multiday rally",
+              "summary": "Why it matters: Elon Musk's space and AI company has seen its stock surge since its blockbuster IPO on Friday.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/17/spacex-stock-elon-musk-market-cap.html",
+              "published_at": "2026-06-17T20:10:12.000Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "news",
               "provider_or_topic": "investing_and_finance"
@@ -246,37 +246,37 @@
           "state": "ready",
           "items": [
             {
-              "item_id": "bloomberg-ai-news:ai-is-learning-to-spot-toxic-bosses-is-sacrificing-your-own-",
-              "headline": "AI Is Learning to Spot Toxic Bosses Is sacrificing your own privacy worth it to stem your manager’s worst tendencies?",
-              "summary": "AI Is Learning to Spot Toxic Bosses Is sacrificing your own privacy worth it to stem your manager’s worst tendencies.",
+              "item_id": "bloomberg-ai-news:ai-health-startup-wants-to-assist-half-of-latin-american-doc",
+              "headline": "AI Health Startup Wants to Assist Half of Latin American Doctors",
+              "summary": "Why it matters: AI Health Startup Wants to Assist Half of Latin American Doctors.",
               "source_name": "Bloomberg AI",
-              "source_url": "https://www.bloomberg.com/news/articles/2026-06-18/ai-workplace-monitoring-software-flags-toxic-bosses?srnd=phx-ai",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-17/ai-health-startup-wants-to-assist-half-of-latin-american-doctors?srnd=phx-ai",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "news",
               "provider_or_topic": "business_general"
             },
             {
-              "item_id": "techcrunch-ai-news:how-to-turn-off-ai-in-your-google-docs",
-              "headline": "How to turn off AI in your Google Docs",
-              "summary": "How to turn off AI in your Google Docs.",
-              "source_name": "TechCrunch AI",
-              "source_url": "https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "item_id": "bloomberg-ai-news:hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-gri",
+              "headline": "Hyperscalers to Get Clarity on How to Speed Access to US Grids",
+              "summary": "Why it matters: Hyperscalers to Get Clarity on How to Speed Access to US Grids.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-17/hyperscalers-to-get-clarity-on-how-to-speed-access-to-us-grids?srnd=phx-ai",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "news",
               "provider_or_topic": "business_general"
             },
             {
-              "item_id": "techcrunch-ai-news:nea-s-tiffany-luck-says-enterprises-are-still-figuring-out-t",
-              "headline": "NEA’s Tiffany Luck says enterprises are still figuring out their AI ROI",
-              "summary": "NEA’s Tiffany Luck says enterprises are still figuring out their AI ROI.",
-              "source_name": "TechCrunch AI",
-              "source_url": "https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/",
-              "published_at": "2026-06-18T13:42:11.481Z",
-              "source_checked_at": "2026-06-18T13:42:11.481Z",
+              "item_id": "bloomberg-ai-news:ian-shiver-for-bloomberg-businessweek-prop-stylist-kelsi-win",
+              "headline": "Ian Shiver for Bloomberg Businessweek. Prop Stylist: Kelsi Windmiller",
+              "summary": "Why it matters: Ian Shiver for Bloomberg Businessweek. Prop Stylist: Kelsi Windmiller.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/features/2026-peptide-legalization-gold-rush/?srnd=phx-ai",
+              "published_at": "2026-06-17T21:23:57.090Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
               "review_state": "approved",
               "item_type": "news",
               "provider_or_topic": "business_general"
@@ -287,9 +287,21 @@
           "column_key": "opinion",
           "label": "Opinion",
           "column_type": "topic",
-          "state": "empty",
-          "state_message": "No items cleared the relevance bar in this refresh window.",
-          "items": []
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "cnbc-ai-news:databricks-sales-growth-tops-80-but-margin-are-shrinking-fro",
+              "headline": "Databricks sales growth tops 80%, but margin are shrinking from swarm of AI agents",
+              "summary": "Why it matters: Databricks is seeing higher growth as AI agents assist with data analysis, but all that activity is significantly increasing costs.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/16/databricks-revenue-growth-tops-80percent-to-6point9-billion-annualized.html",
+              "published_at": "2026-06-16T22:25:28.000Z",
+              "source_checked_at": "2026-06-17T21:23:57.090Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "opinion"
+            }
+          ]
         }
       ]
     }

@@ -27,7 +27,7 @@ export function evaluateForceReview(item: DeskItem): ForceReviewDecision {
     reasons.push("headline_only_summary");
   }
 
-  if (item.summary.trim().split(/\s+/u).length < 8) {
+  if (item.item_type !== "status" && item.summary.trim().split(/\s+/u).length < 8) {
     reasons.push("summary_too_thin");
   }
 
