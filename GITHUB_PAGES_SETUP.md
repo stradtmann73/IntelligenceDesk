@@ -21,7 +21,7 @@ This project is now prepared for GitHub Pages hosting.
   - deploys `dist/circle-facing` to GitHub Pages
 
 - `Refresh Snapshot`
-  - runs every 12 hours
+  - runs every 6 hours
   - refreshes the snapshot
   - rebuilds the Circle artifacts
   - redeploys `dist/circle-facing` to GitHub Pages
@@ -35,9 +35,9 @@ Your hosted snapshot URL will look like:
 Then:
 
 1. Open `dist/circle-facing/circle-custom-html.html`
-2. Replace:
-   - `https://YOUR-HOSTED-SNAPSHOT-URL/snapshot.json`
+2. Replace `https://YOUR-HOSTED-SNAPSHOT-URL/snapshot.json`
 3. With your real GitHub Pages snapshot URL
-4. Paste that HTML into the Circle `Custom HTML` block once
+4. Open `dist/circle-facing/circle-preview.html` and confirm the layout looks right
+5. Paste the contents of `circle-custom-html.html` into the Circle `Custom HTML` block once
 
 After that, Circle should fetch the latest snapshot automatically.

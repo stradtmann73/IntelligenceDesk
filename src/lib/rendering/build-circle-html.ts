@@ -410,7 +410,6 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
             <div class="freshness-card" aria-label="Last updated">
               <span class="freshness-card__label">Last updated</span>
               <strong>\${escapeHtml(formatDate(snapshot.published_at || snapshot.generated_at))}</strong>
-              <p>Snapshot cadence: every \${escapeHtml(String(snapshot.refresh_window_hours || 12))} hours.</p>
             </div>
           </div>
           <div class="intro-shell__guidance">

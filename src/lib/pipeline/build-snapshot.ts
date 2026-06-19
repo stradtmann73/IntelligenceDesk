@@ -227,7 +227,7 @@ export function buildSnapshotCandidate(input: BuildSnapshotInput): Snapshot {
     schema_version: "1.0.0",
     generated_at: generatedAt,
     published_at: publishedAt,
-    refresh_window_hours: input.refreshWindowHours ?? 12,
+    refresh_window_hours: input.refreshWindowHours ?? 6,
     member_surface: "circle",
     renderer_mode: input.rendererMode ?? "fallback_preview",
     publish_state: deriveSnapshotPublishState(
