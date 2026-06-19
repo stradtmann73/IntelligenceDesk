@@ -5,6 +5,7 @@ import {
   cleanSourceSummary,
   summarizeText
 } from "../sources/shared/normalize-html.ts";
+import { toPublicSourceUrl } from "./public-source-url.ts";
 import type {
   NewsTopicKey,
   ProviderKey,
@@ -106,7 +107,7 @@ function normalizeNewsTopic(
   fallbackTopic?: NewsTopicKey
 ): NewsTopicKey {
   const routed = routeNewsTopic(raw);
-  return routed || fallbackTopic || "business_general";
+  return fallbackTopic || routed || "business_general";
 }
 
 function normalizeCandidate(
@@ -172,7 +173,7 @@ function normalizeCandidate(
     headline,
     summary: normalizeSummary(raw),
     source_name: source.label,
-    source_url: raw.sourceUrl,
+    source_url: toPublicSourceUrl(raw.sourceUrl, source.canonicalUrl),
     published_at: toPublishedAt(raw, result.fetchedAt),
     source_checked_at: result.fetchedAt,
     review_state: "draft_generated"

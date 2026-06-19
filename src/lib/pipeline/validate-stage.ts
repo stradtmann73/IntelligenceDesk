@@ -1,9 +1,12 @@
 import { listApprovedSources } from "../sources/registry.ts";
 import { deskItemSchema, type DeskItem } from "../schema/item.ts";
 import { snapshotSchema, type Snapshot } from "../schema/snapshot.ts";
+import { isMachineReadableSourceUrl } from "./public-source-url.ts";
 
 export type ValidationIssueReason =
   | "schema_validation_failed"
+  | "machine_readable_source_url"
+  | "status_link_not_canonical"
   | "source_name_mismatch"
   | "source_link_mismatch"
   | "unapproved_source"
@@ -48,6 +51,7 @@ function buildAllowedHosts() {
   return listApprovedSources().map((source) => ({
     key: source.key,
     label: source.label,
+    canonicalUrl: source.canonicalUrl,
     canonicalHost: normalizeHostname(source.canonicalUrl),
     endpointHost: normalizeHostname(source.endpointUrl)
   }));
@@ -111,6 +115,26 @@ function validateDeskItem(item: DeskItem): ValidationIssue[] {
       item_id: item.item_id,
       reason: "source_link_mismatch",
       message: "Item source URL does not match the approved source host.",
+      source_name: item.source_name,
+      source_url: item.source_url
+    });
+  }
+
+  if (isMachineReadableSourceUrl(item.source_url)) {
+    issues.push({
+      item_id: item.item_id,
+      reason: "machine_readable_source_url",
+      message: "Item source URL points to a machine-readable feed or endpoint instead of a human-readable page.",
+      source_name: item.source_name,
+      source_url: item.source_url
+    });
+  }
+
+  if (item.item_type === "status" && matchedSource.canonicalUrl !== item.source_url) {
+    issues.push({
+      item_id: item.item_id,
+      reason: "status_link_not_canonical",
+      message: "Status items must link to the provider's current status home page.",
       source_name: item.source_name,
       source_url: item.source_url
     });

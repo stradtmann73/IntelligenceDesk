@@ -33,6 +33,7 @@ export type RankableDeskLikeItem = {
   published_at: string;
   source_checked_at: string;
   review_state: ReviewState;
+  source_name?: string;
   status_label?: StatusLabel;
   significance_tag?: SignificanceTag;
 };
@@ -102,11 +103,53 @@ function compareNewsItems(left: RankableDeskLikeItem, right: RankableDeskLikeIte
   return toTimestamp(right.published_at) - toTimestamp(left.published_at);
 }
 
+function rankNewsItemsWithSourceDiversity<TItem extends RankableDeskLikeItem>(
+  items: TItem[],
+  limit: number
+): TItem[] {
+  const sorted = [...items].sort(compareNewsItems);
+  const selected: TItem[] = [];
+  const seenSources = new Set<string>();
+
+  for (const item of sorted) {
+    const sourceName = item.source_name?.trim();
+
+    if (!sourceName || seenSources.has(sourceName)) {
+      continue;
+    }
+
+    selected.push(item);
+    seenSources.add(sourceName);
+
+    if (selected.length === limit) {
+      return selected;
+    }
+  }
+
+  for (const item of sorted) {
+    if (selected.includes(item)) {
+      continue;
+    }
+
+    selected.push(item);
+
+    if (selected.length === limit) {
+      break;
+    }
+  }
+
+  return selected;
+}
+
 export function rankItemsForColumn<TItem extends RankableDeskLikeItem>(
   sectionKey: SectionKey,
   items: TItem[],
   limit = 3
 ): TItem[] {
+  if (sectionKey === "news") {
+    return rankNewsItemsWithSourceDiversity(items, limit);
+  }
+
   const sorted = [...items].sort((left, right) => {
     if (sectionKey === "llm_status") {
       return compareStatusItems(left, right);
@@ -116,7 +159,7 @@ export function rankItemsForColumn<TItem extends RankableDeskLikeItem>(
       return compareUpdateItems(left, right);
     }
 
-    return compareNewsItems(left, right);
+    return 0;
   });
 
   return sorted.slice(0, limit);

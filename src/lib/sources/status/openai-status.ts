@@ -66,7 +66,7 @@ export async function fetchOpenaiStatus(
         [statusText ? `Status: ${statusText}.` : "", summaryText].filter(Boolean).join(" "),
         220
       ) || "No active issue is visible on the official OpenAI status feed in this snapshot.",
-      sourceUrl: latestItem.link || source.canonicalUrl,
+      sourceUrl: source.canonicalUrl,
       publishedAt: latestItem.pubDate,
       rawText: latestItem.description ?? response.body
     }

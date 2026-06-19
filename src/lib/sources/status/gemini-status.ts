@@ -43,7 +43,7 @@ export const geminiStatusSource = defineSource({
   sourceClass: "status",
   transport: "html",
   endpointUrl: "https://status.cloud.google.com/incidents.json",
-  canonicalUrl: "https://status.cloud.google.com/incidents.json",
+  canonicalUrl: "https://status.cloud.google.com/",
   active: true,
   notes: "Google Cloud incident feed filtered for Gemini-related products.",
   scope: { provider: "gemini" },
@@ -106,9 +106,7 @@ export async function fetchGeminiStatus(
     {
       headline: "Gemini status",
       summary: summarizeText(latestText || buildGeminiFallbackSummary(), 220),
-      sourceUrl: activeIncident.uri
-        ? new URL(activeIncident.uri, "https://status.cloud.google.com/").toString()
-        : source.canonicalUrl,
+      sourceUrl: source.canonicalUrl,
       publishedAt: activeIncident.modified ?? activeIncident.most_recent_update?.when ?? null,
       rawText: activeIncident.most_recent_update?.text ?? activeIncident.external_desc ?? response.body
     }

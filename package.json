@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node ./scripts/run-astro-build.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "validate:snapshot": "node --enable-source-maps ./scripts/validate-current.ts",

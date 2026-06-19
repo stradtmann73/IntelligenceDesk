@@ -7,7 +7,7 @@ const projectRoot = path.resolve(currentDirectory, "../../..");
 const distDirectory = path.join(projectRoot, "dist");
 const distIndexPath = path.join(distDirectory, "index.html");
 const hostedSnapshotUrl = "https://stradtmann73.github.io/IntelligenceDesk/snapshot.json";
-const hostedPreviewUrl = "https://stradtmann73.github.io/IntelligenceDesk/circle-preview.html";
+const placeholderSnapshotUrl = "https://YOUR-HOSTED-SNAPSHOT-URL/snapshot.json";
 
 function extractCssHref(html: string): string {
   const match = html.match(/<link rel="stylesheet" href="([^"]+)">/u);
@@ -61,18 +61,50 @@ function prettyPrintCss(css: string): string {
     .trim();
 }
 
+function normalizeAnswerBarCss(css: string): string {
+  return css
+    .replace(/#2e74b5/giu, "#7a44dc")
+    .replace(/#1f4d78/giu, "#5f2acb")
+    .replace(/#eeece1/giu, "#f5f0ff")
+    .replace(/#e4edf7/giu, "#efe7ff")
+    .replace(/#1f1a17/giu, "#271a39")
+    .replace(/#666666/giu, "#5c5074")
+    .replace(/#b8cce4/giu, "#bfa6f8")
+    .replace(/#c0504d/giu, "#7a44dc")
+    .replace(/#f4dfde/giu, "#f5f0ff")
+    .replace(/rgba\(79,\s*129,\s*189,\s*([^)]+)\)/giu, "rgba(122, 68, 220, $1)")
+    .replace(/rgba\(31,\s*26,\s*23,\s*([^)]+)\)/giu, "rgba(39, 26, 57, $1)");
+}
+
 function buildCustomHtmlOverrides(): string {
   return [
-    ".ab-intelligence-desk{min-height:auto!important;margin:0!important;padding:0!important;background:transparent!important;}",
+    ".ab-intelligence-desk{--color-background:#ffffff!important;--color-surface:#ffffff!important;--color-surface-alt:#f5f0ff!important;--color-surface-strong:#efe7ff!important;--color-ink:#271a39!important;--color-muted:#5c5074!important;--color-line:#bfa6f8!important;--color-brand:#7a44dc!important;--color-brand-strong:#5f2acb!important;--color-brand-soft:#f5f0ff!important;--color-accent:#7a44dc!important;--color-accent-soft:#f5f0ff!important;--color-success:#157347!important;--color-warning:#9a6700!important;--color-danger:#b42318!important;min-height:auto!important;margin:0!important;padding:0!important;background:transparent!important;color:var(--color-ink)!important;}",
     ".ab-intelligence-desk .skip-link{display:none!important;}",
     ".ab-intelligence-desk .page-shell{box-sizing:border-box!important;max-width:1200px!important;width:100%!important;margin:0 auto!important;padding:20px!important;gap:24px!important;}",
+    ".ab-intelligence-desk .page-shell,.ab-intelligence-desk .intro-shell h1,.ab-intelligence-desk .section-shell__header h2,.ab-intelligence-desk .column-card__header h3,.ab-intelligence-desk .item-card__headline{font-family:\"Source Sans 3\",system-ui,sans-serif!important;}",
     ".ab-intelligence-desk .intro-shell,.ab-intelligence-desk .section-shell{padding:16px!important;}",
+    ".ab-intelligence-desk .intro-shell{background:linear-gradient(180deg,rgba(255,255,255,.99),rgba(245,240,255,.55) 62%)!important;box-shadow:0 18px 34px rgba(39,26,57,.08)!important;border-color:rgba(191,166,248,.34)!important;}",
+    ".ab-intelligence-desk .section-shell,.ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card,.ab-intelligence-desk .empty-state-card,.ab-intelligence-desk .stale-state-card,.ab-intelligence-desk .loading-card,.ab-intelligence-desk .error-card,.ab-intelligence-desk .config-card,.ab-intelligence-desk .freshness-card{border-color:rgba(191,166,248,.28)!important;}",
     ".ab-intelligence-desk .intro-shell__headline{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(280px,320px)!important;align-items:start!important;gap:24px!important;}",
     ".ab-intelligence-desk .intro-shell__headline>*{min-width:0!important;}",
     ".ab-intelligence-desk .intro-shell h1{max-width:14ch!important;word-break:normal!important;overflow-wrap:normal!important;}",
     ".ab-intelligence-desk .intro-shell__lede,.ab-intelligence-desk .intro-shell__guidance p,.ab-intelligence-desk .section-shell__header p,.ab-intelligence-desk .item-card__summary{word-break:normal!important;overflow-wrap:anywhere!important;}",
+    ".ab-intelligence-desk .eyebrow,.ab-intelligence-desk .section-shell__eyebrow,.ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .item-card__summary-prefix,.ab-intelligence-desk .metadata-pill__label{color:var(--color-accent)!important;}",
+    ".ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .metadata-pill__label{border-color:rgba(191,166,248,.36)!important;background:rgba(245,240,255,.95)!important;}",
     ".ab-intelligence-desk .freshness-card{width:100%!important;max-width:320px!important;justify-self:end!important;}",
+    ".ab-intelligence-desk .freshness-card,.ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card--update,.ab-intelligence-desk .item-card--news,.ab-intelligence-desk .item-card--recently-unstable,.ab-intelligence-desk .section-shell--status,.ab-intelligence-desk .section-shell--updates,.ab-intelligence-desk .section-shell--news{background:linear-gradient(180deg,rgba(255,255,255,.99),rgba(245,240,255,.62))!important;box-shadow:none!important;}",
     ".ab-intelligence-desk .section-grid{align-items:start;}",
+    ".ab-intelligence-desk .item-card__headline a,.ab-intelligence-desk .metadata-row a{color:var(--color-ink)!important;}",
+    ".ab-intelligence-desk .item-card__headline a:hover,.ab-intelligence-desk .metadata-row a:hover{color:var(--color-accent)!important;}",
+    ".ab-intelligence-desk .item-card__source-link{background:var(--color-brand-strong)!important;color:#fff!important;box-shadow:0 8px 18px rgba(95,42,203,.18)!important;}",
+    ".ab-intelligence-desk .item-card__source-link:hover{background:var(--color-brand)!important;}",
+    ".ab-intelligence-desk .section-shell__guidance{border-top:1px dashed rgba(191,166,248,.3)!important;}",
+    ".ab-intelligence-desk .intro-shell__guidance{border-top:1px solid rgba(191,166,248,.34)!important;}",
+    ".ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .status-badge--recently-unstable,.ab-intelligence-desk .significance-badge,.ab-intelligence-desk .significance-badge--watch-closely{background:rgba(245,240,255,.95)!important;color:var(--color-accent)!important;}",
+    ".ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card,.ab-intelligence-desk .section-shell{box-shadow:none!important;}",
+    ".ab-intelligence-desk .item-card--stable{background:linear-gradient(180deg,rgba(232,245,236,.92),rgba(255,255,255,.99) 32%)!important;}",
+    ".ab-intelligence-desk .item-card--degraded{background:linear-gradient(180deg,rgba(255,243,225,.96),rgba(255,255,255,.99) 32%)!important;}",
+    ".ab-intelligence-desk .item-card--outage{background:linear-gradient(180deg,rgba(252,234,230,.96),rgba(255,255,255,.99) 32%)!important;}",
     ".ab-intelligence-desk .state-card__label{white-space:nowrap;}",
     ".ab-intelligence-desk .loading-card,.ab-intelligence-desk .error-card{display:grid;gap:12px;padding:16px;border:1px solid var(--color-line);border-radius:var(--radius-lg);background:var(--color-surface);}",
     ".ab-intelligence-desk .config-card{display:grid;gap:10px;padding:16px;border:1px dashed var(--color-line);border-radius:var(--radius-lg);background:var(--color-surface-alt);}",
@@ -130,10 +162,12 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
 
   function cleanText(value) {
     return String(value ?? "")
-      .replace(/â€™/g, "'")
-      .replace(/â€œ|â€/g, '"')
-      .replace(/Â·/g, "·")
-      .replace(/Â/g, "")
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201c\u201d]/g, '"')
+      .replace(/\u00e2\u20ac\u2122/g, "'")
+      .replace(/\u00e2\u20ac(?:\u0153|\u009d)/g, '"')
+      .replace(/\u00c2\u00b7/g, "\u00b7")
+      .replace(/\u00c2/g, "")
       .replace(/\s+/g, " ")
       .trim();
   }
@@ -286,19 +320,19 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
       <article class="item-card item-card--\${escapeHtml(item.item_type)}\${tone}">
         <div class="item-card__topline">\${renderBadge(item)}</div>
         <h4 class="item-card__headline">
-          <a href="\${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">\${escapeHtml(sanitizeHeadline(item))}</a>
+          <a href="\${escapeHtml(item.source_url)}" target="_top" rel="noopener">\${escapeHtml(sanitizeHeadline(item))}</a>
         </h4>
         \${renderSourceForward(item)}
         \${renderSummary(item)}
         <div class="item-card__actions">
-          <a class="item-card__source-link" href="\${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">Open source</a>
+          <a class="item-card__source-link" href="\${escapeHtml(item.source_url)}" target="_top" rel="noopener">Open source</a>
           <span class="item-card__source-meta">\${escapeHtml(cleanText(item.source_name))}</span>
         </div>
         <div class="item-card__footer">
           <div class="metadata-row">
             <span class="metadata-pill">
               <span class="metadata-pill__label">Source</span>
-              <a href="\${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">\${escapeHtml(cleanText(item.source_name))}</a>
+              <a href="\${escapeHtml(item.source_url)}" target="_top" rel="noopener">\${escapeHtml(cleanText(item.source_name))}</a>
             </span>
             <span class="metadata-pill">
               <span class="metadata-pill__label">Published</span>
@@ -369,9 +403,9 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
         <section class="intro-shell">
           <div class="intro-shell__headline">
             <div>
-              <p class="eyebrow">Private AI intelligence network</p>
+              <p class="eyebrow">Answer Bar</p>
               <h1>Intelligence Desk</h1>
-              <p class="intro-shell__lede">One place to check whether a model is wobbling, what changed across major providers, and which AI business headlines are actually worth your attention.</p>
+              <p class="intro-shell__lede">Use this page to check three things fast: whether a major AI tool is having issues, what providers officially changed, and which AI business stories are worth your time.</p>
             </div>
             <div class="freshness-card" aria-label="Last updated">
               <span class="freshness-card__label">Last updated</span>
@@ -380,7 +414,7 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
             </div>
           </div>
           <div class="intro-shell__guidance">
-            <p><strong>Start here:</strong> Check "LLM Status" when a tool feels off, "LLM/Model Updates" when something new lands, and "News" when you want the broader market read.</p>
+            <p><strong>Start here:</strong> Check "LLM Status" when a tool feels off, "LLM/Model Updates" when a provider ships something new, and "News" when you want the broader business view.</p>
           </div>
         </section>
         \${(snapshot.sections || []).map(renderSection).join("")}
@@ -457,12 +491,13 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
     setInterval(loadSnapshot, refreshIntervalMs);
   }
 })();
-  `.trim();
+  `.trim()
+    .replace(/\\`/g, "`")
+    .replace(/\\\$\{/g, "${");
 }
 
 export interface CircleHtmlArtifact {
   customHtml: string;
-  embedHtml: string;
   previewHtml: string;
 }
 
@@ -473,24 +508,18 @@ export async function buildCircleHtml(): Promise<CircleHtmlArtifact> {
   const snapshotPath = path.join(projectRoot, "data", "current", "snapshot.json");
   const css = await readFile(cssPath, "utf8");
   const snapshot = JSON.parse(await readFile(snapshotPath, "utf8"));
-  const scopedCss = scopeCssSelectors(css, ".ab-intelligence-desk");
+  const scopedCss = normalizeAnswerBarCss(scopeCssSelectors(css, ".ab-intelligence-desk"));
   const customHtmlCss = prettyPrintCss(`${scopedCss}\n${buildCustomHtmlOverrides()}`);
   const previewRendererScript = buildLiveRendererScript(JSON.stringify(snapshot));
 
   const customHtml = [
     "<style>",
-    [
-      ".ab-intelligence-desk-frame{width:100%;max-width:1200px;margin:0 auto;}",
-      ".ab-intelligence-desk-frame iframe{display:block;width:100%;min-height:3200px;border:0;border-radius:20px;background:#fff;}",
-      "@media(max-width:840px){.ab-intelligence-desk-frame iframe{min-height:4200px;}}",
-      "@media(max-width:540px){.ab-intelligence-desk-frame iframe{min-height:5200px;}}"
-    ].join(""),
+    customHtmlCss,
     "</style>",
-    [
-      '<div class="ab-intelligence-desk-frame">',
-      `<iframe src="${hostedPreviewUrl}" title="Intelligence Desk" loading="lazy"></iframe>`,
-      "</div>"
-    ].join("")
+    `<div class="ab-intelligence-desk" data-snapshot-url="${hostedSnapshotUrl}"></div>`,
+    "<script>",
+    previewRendererScript,
+    "</script>"
   ].join("");
 
   const previewHtml = [
@@ -514,14 +543,8 @@ export async function buildCircleHtml(): Promise<CircleHtmlArtifact> {
     "</html>"
   ].join("");
 
-  const embedHtml = builtHtml.replace(
-    /<link rel="stylesheet" href="[^"]+">/u,
-    `<style>${css}</style>`
-  );
-
   return {
     customHtml,
-    embedHtml,
     previewHtml
   };
 }
