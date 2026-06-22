@@ -41,6 +41,42 @@ const sectionShellMeta = {
     emphasis: "secondary" as const
   }
 };
+
+function sectionHasMixedFreshness(section: (typeof snapshot.sections)[number]): boolean {
+  return (
+    section.section_key === "news" &&
+    section.columns.some((column) => column.state === "ready" && column.items.length > 0) &&
+    section.columns.some((column) => column.state === "stale")
+  );
+}
+
+function getStaleCardCopy(
+  section: (typeof snapshot.sections)[number],
+  column: (typeof snapshot.sections)[number]["columns"][number]
+) {
+  if (section.section_key === "news") {
+    const hasFreshPeers = section.columns.some(
+      (candidate) =>
+        candidate.column_key !== column.column_key &&
+        candidate.state === "ready" &&
+        candidate.items.length > 0
+    );
+
+    return {
+      label: column.column_key === "investing_and_finance" ? "Finance delayed" : "Topic delayed",
+      title: `${column.label} refresh delayed`,
+      message: hasFreshPeers
+        ? `${column.label} is temporarily showing the last verified items. Other news columns in this section were refreshed more recently.`
+        : `${column.label} is temporarily showing the last verified items until fresh verification completes.`
+    };
+  }
+
+  return {
+    label: "Stale",
+    title: "Last verified view",
+    message: column.state_message
+  };
+}
 ---
 
 <IntelligenceDeskLayout>
@@ -76,6 +112,12 @@ const sectionShellMeta = {
         guidance={sectionShellMeta[section.section_key].guidance}
         emphasis={sectionShellMeta[section.section_key].emphasis}
       >
+        {sectionHasMixedFreshness(section) && (
+          <p class="section-shell__notice">
+            Some news categories refreshed in this window. Any delayed column below is still
+            showing its last verified items.
+          </p>
+        )}
         <div class="section-grid" role="list" aria-label={`${section.title} columns`}>
           {orderSectionColumns(section.section_key, section.columns).map((column) => (
             <div role="listitem">
@@ -106,8 +148,9 @@ const sectionShellMeta = {
               {column.state === "stale" && (
                 <StaleStateCard
                   tone="stale"
-                  title="Last verified view"
-                  message={column.state_message}
+                  label={getStaleCardCopy(section, column).label}
+                  title={getStaleCardCopy(section, column).title}
+                  message={getStaleCardCopy(section, column).message}
                 />
               )}
               {selectColumnItems(section.section_key, column).map((item) => (

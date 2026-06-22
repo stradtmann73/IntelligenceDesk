@@ -241,23 +241,60 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
     return text;
   }
 
-  function renderStateCard(column) {
+  function sectionHasMixedFreshness(section) {
+    return section.section_key === "news" &&
+      (section.columns || []).some((column) => column.state === "ready" && (column.items || []).length > 0) &&
+      (section.columns || []).some((column) => column.state === "stale");
+  }
+
+  function getStateCardCopy(section, column) {
+    if (column.state === "empty") {
+      return {
+        label: "Curated Gap",
+        title: "Nothing strong enough to feature",
+        message: column.state_message || "No current item is available."
+      };
+    }
+
+    if (column.state === "source_delayed") {
+      return {
+        label: "Delayed",
+        title: "Source check delayed",
+        message: column.state_message || "No current item is available."
+      };
+    }
+
+    if (section.section_key === "news") {
+      const hasFreshPeers = (section.columns || []).some((candidate) =>
+        candidate.column_key !== column.column_key &&
+        candidate.state === "ready" &&
+        (candidate.items || []).length > 0
+      );
+
+      return {
+        label: column.column_key === "investing_and_finance" ? "Finance delayed" : "Topic delayed",
+        title: column.label + " refresh delayed",
+        message: hasFreshPeers
+          ? column.label + " is temporarily showing the last verified items. Other news columns in this section were refreshed more recently."
+          : column.label + " is temporarily showing the last verified items until fresh verification completes."
+      };
+    }
+
+    return {
+      label: "Stale",
+      title: "Last verified view",
+      message: column.state_message || "No current item is available."
+    };
+  }
+
+  function renderStateCard(section, column) {
     if (!column.state || column.state === "ready") return "";
-    const labelMap = {
-      empty: "Curated Gap",
-      stale: "Stale",
-      source_delayed: "Delayed"
-    };
-    const headlineMap = {
-      empty: "Nothing strong enough to feature",
-      stale: "Last verified view",
-      source_delayed: "Source check delayed"
-    };
+    const copy = getStateCardCopy(section, column);
     return \`
       <article class="stale-state-card stale-state-card--\${escapeHtml(column.state)}">
-        <span class="state-card__label">\${escapeHtml(labelMap[column.state] || column.state)}</span>
-        <h4>\${escapeHtml(headlineMap[column.state] || column.state)}</h4>
-        <p>\${escapeHtml(column.state_message || "No current item is available.")}</p>
+        <span class="state-card__label">\${escapeHtml(copy.label)}</span>
+        <h4>\${escapeHtml(copy.title)}</h4>
+        <p>\${escapeHtml(copy.message)}</p>
       </article>
     \`;
   }
@@ -344,8 +381,8 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
     \`;
   }
 
-  function renderColumn(column) {
-    const stateCard = renderStateCard(column);
+  function renderColumn(section, column) {
+    const stateCard = renderStateCard(section, column);
     const items = (column.items || []).map(renderItemCard).join("");
     return \`
       <div role="listitem">
@@ -376,6 +413,9 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
     const toneClass = section.section_key === "news" ? "section-shell--secondary section-shell--news" :
       section.section_key === "llm_model_updates" ? "section-shell--primary section-shell--updates" :
       "section-shell--primary section-shell--status";
+    const sectionNotice = sectionHasMixedFreshness(section)
+      ? '<p class="section-shell__notice">Some news categories refreshed in this window. Any delayed column below is still showing its last verified items.</p>'
+      : "";
 
     return \`
       <section class="section-shell \${toneClass}" aria-label="\${escapeHtml(section.title)}" aria-roledescription="information section">
@@ -389,8 +429,9 @@ function buildLiveRendererScript(bootstrapSnapshot: string): string {
           <p class="section-shell__guidance">\${escapeHtml(guidanceMap[section.section_key] || "")}</p>
         </header>
         <div class="section-shell__body">
+          \${sectionNotice}
           <div class="section-grid" role="list" aria-label="\${escapeHtml(section.title)} columns">
-            \${(section.columns || []).map(renderColumn).join("")}
+            \${(section.columns || []).map((column) => renderColumn(section, column)).join("")}
           </div>
         </div>
       </section>

@@ -1,11 +1,13 @@
 ---
 interface Props {
+  label?: string;
   title?: string;
   message?: string;
   tone?: "stale" | "source_delayed";
 }
 
 const {
+  label,
   title,
   message = "Source check delayed. Last verified content will appear here.",
   tone = "stale"
@@ -14,11 +16,11 @@ const {
 const resolvedTitle =
   title ??
   (tone === "source_delayed" ? "Verification delayed" : "Showing last verified context");
-const label = tone === "source_delayed" ? "Delayed" : "Stale";
+const resolvedLabel = label ?? (tone === "source_delayed" ? "Delayed" : "Stale");
 ---
 
 <article class:list={["stale-state-card", `stale-state-card--${tone}`]}>
-  <span class="state-card__label">{label}</span>
+  <span class="state-card__label">{resolvedLabel}</span>
   <h4>{resolvedTitle}</h4>
   <p>{message}</p>
 </article>
