@@ -9,7 +9,7 @@ import {
 import { fetchUrl } from "../shared/fetch-url.ts";
 import { parseRss } from "../shared/parse-rss.ts";
 import { summarizeText } from "../shared/normalize-html.ts";
-import { isAiNewsCandidate } from "./topic-routing.ts";
+import { isAiFinanceNewsCandidate } from "./topic-routing.ts";
 
 export const cnbcBroadNewsSource = defineSource({
   key: "cnbc-broad-news",
@@ -34,7 +34,7 @@ function toRawItems(items: ReturnType<typeof parseRss>): RawSourceItem[] {
       sourceUrl: item.link,
       publishedAt: item.pubDate
     }))
-    .filter(isAiNewsCandidate)
+    .filter(isAiFinanceNewsCandidate)
     .slice(0, 12);
 }
 

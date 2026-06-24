@@ -107,7 +107,7 @@ function normalizeNewsTopic(
   fallbackTopic?: NewsTopicKey
 ): NewsTopicKey {
   const routed = routeNewsTopic(raw);
-  return fallbackTopic || routed || "business_general";
+  return routed || fallbackTopic || "business_general";
 }
 
 function normalizeCandidate(

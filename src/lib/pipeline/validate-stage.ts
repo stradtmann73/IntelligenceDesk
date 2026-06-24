@@ -61,17 +61,29 @@ const allowedSourceHosts = buildAllowedHosts();
 
 function findMatchingSource(item: DeskItem) {
   const itemHost = normalizeHostname(item.source_url);
-
-  return allowedSourceHosts.find((source) => {
+  const hostMatches = allowedSourceHosts.filter((source) => {
     if (!itemHost) {
       return false;
     }
 
-    const hostMatches =
-      source.canonicalHost === itemHost || source.endpointHost === itemHost;
-    const labelMatches = source.label === item.source_name;
+    return source.canonicalHost === itemHost || source.endpointHost === itemHost;
+  });
 
-    return hostMatches || labelMatches;
+  const exactHostAndLabelMatch = hostMatches.find(
+    (source) => source.label === item.source_name
+  );
+
+  if (exactHostAndLabelMatch) {
+    return exactHostAndLabelMatch;
+  }
+
+  if (hostMatches.length === 1) {
+    return hostMatches[0];
+  }
+
+  return allowedSourceHosts.find((source) => {
+    const labelMatches = source.label === item.source_name;
+    return labelMatches;
   });
 }
 

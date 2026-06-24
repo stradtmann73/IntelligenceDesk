@@ -34,6 +34,11 @@ const investingKeywords = [
   "acquisition",
   "ipo",
   "capital",
+  "revenue",
+  "profit",
+  "pricing",
+  "price",
+  "prices",
   "chip",
   "chips",
   "semiconductor"
@@ -53,6 +58,10 @@ function buildHaystack(item: Pick<RawSourceItem, "headline" | "summary" | "sourc
   return `${item.headline} ${item.summary ?? ""} ${item.sourceUrl}`.toLowerCase();
 }
 
+function hasKeyword(haystack: string, keywords: readonly string[]): boolean {
+  return keywords.some((keyword) => haystack.includes(keyword));
+}
+
 export function isAiNewsCandidate(item: Pick<RawSourceItem, "headline" | "summary" | "sourceUrl">): boolean {
   const headline = item.headline.trim();
   if (headline.length < 28 || headline.length > 180) {
@@ -65,17 +74,27 @@ export function isAiNewsCandidate(item: Pick<RawSourceItem, "headline" | "summar
     return false;
   }
 
-  return aiKeywords.some((keyword) => haystack.includes(keyword));
+  return hasKeyword(haystack, aiKeywords);
+}
+
+export function isAiFinanceNewsCandidate(
+  item: Pick<RawSourceItem, "headline" | "summary" | "sourceUrl">
+): boolean {
+  if (!isAiNewsCandidate(item)) {
+    return false;
+  }
+
+  return hasKeyword(buildHaystack(item), investingKeywords);
 }
 
 export function routeNewsTopic(item: RawSourceItem): NewsTopicKey {
   const haystack = buildHaystack(item);
 
-  if (opinionKeywords.some((keyword) => haystack.includes(keyword))) {
+  if (hasKeyword(haystack, opinionKeywords)) {
     return "opinion";
   }
 
-  if (investingKeywords.some((keyword) => haystack.includes(keyword))) {
+  if (hasKeyword(haystack, investingKeywords)) {
     return "investing_and_finance";
   }
 
