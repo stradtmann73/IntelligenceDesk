@@ -13,7 +13,10 @@ function decodeXmlText(value: string): string {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&#x27;/gi, "'")
+    .replace(/&#x2019;/gi, "'");
 }
 
 function matchTag(block: string, tagName: string): string | null {

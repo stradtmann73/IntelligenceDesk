@@ -1,4 +1,5 @@
 import type { DeskItem } from "../schema/item.ts";
+import { cleanHeadlineText, cleanSourceSummary } from "../sources/shared/normalize-html.ts";
 
 export interface DeskItemViewModel {
   headline: string;
@@ -17,9 +18,9 @@ export interface DeskItemViewModel {
 
 export function mapItemToViewModel(item: DeskItem): DeskItemViewModel {
   const baseViewModel: DeskItemViewModel = {
-    headline: item.headline,
-    summary: item.summary,
-    sourceName: item.source_name,
+    headline: cleanHeadlineText(item.headline),
+    summary: cleanSourceSummary(item.summary),
+    sourceName: cleanHeadlineText(item.source_name),
     sourceUrl: item.source_url,
     publishedAt: item.published_at,
     cardKind: item.item_type === "status" ? "status" : item.item_type === "update" ? "update" : "news",

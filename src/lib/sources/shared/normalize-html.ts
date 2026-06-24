@@ -40,8 +40,10 @@ function decodeHtmlEntities(input: string): string {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, "\"")
+    .replace(/&apos;/g, "'")
     .replace(/&#39;/g, "'")
     .replace(/&#x27;/gi, "'")
+    .replace(/&#x2019;/gi, "'")
     .replace(/&#x2F;/gi, "/")
     .replace(/&rsquo;/gi, "'")
     .replace(/&lsquo;/gi, "'")
@@ -50,7 +52,8 @@ function decodeHtmlEntities(input: string): string {
     .replace(/&mdash;/gi, "\u2014")
     .replace(/&ndash;/gi, "\u2013")
     .replace(/&hellip;/gi, "...")
-    .replace(/&#(\d+);/g, (_match, codePoint) => String.fromCharCode(Number(codePoint)));
+    .replace(/&#(\d+);/g, (_match, codePoint) => String.fromCodePoint(Number(codePoint)))
+    .replace(/&#x([0-9a-f]+);/gi, (_match, codePoint) => String.fromCodePoint(Number.parseInt(codePoint, 16)));
 }
 
 function stripNonContentBlocks(input: string): string {
