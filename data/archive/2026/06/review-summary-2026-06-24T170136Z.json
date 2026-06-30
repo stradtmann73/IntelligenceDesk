@@ -1,0 +1,9 @@
+{
+  "reviewer_type": "system",
+  "notes": "51 item(s) auto-approved. 1 item(s) require human review. 0 item(s) blocked or suppressed.",
+  "counts": {
+    "approved": 51,
+    "needs_review": 1,
+    "blocked": 0
+  }
+}

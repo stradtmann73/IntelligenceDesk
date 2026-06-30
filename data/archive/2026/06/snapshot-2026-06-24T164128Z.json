@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-24T16:41:28.469Z",
+  "published_at": "2026-06-24T16:41:28.469Z",
+  "refresh_window_hours": 6,
+  "member_surface": "circle",
+  "renderer_mode": "fallback_preview",
+  "publish_state": "held_stale",
+  "review_summary": {
+    "reviewer_type": "system",
+    "notes": "51 item(s) auto-approved. 1 item(s) require human review. 0 item(s) blocked or suppressed."
+  },
+  "sections": [
+    {
+      "section_key": "llm_status",
+      "title": "LLM Status",
+      "description": "Operational signals from official provider status sources.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-status:fedramp-workspaces-and-api-orgs-have-degraded-performance",
+              "headline": "FedRAMP workspaces and API orgs have degraded performance",
+              "summary": "Status: Investigating.",
+              "source_name": "OpenAI Status",
+              "source_url": "https://status.openai.com/",
+              "published_at": "2026-06-18T19:41:22.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "openai",
+              "status_label": "Degraded"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-status:gemini-status",
+              "headline": "Gemini status",
+              "summary": "No active Gemini API incident is visible in the official Google Cloud incident feed in this snapshot.",
+              "source_name": "Gemini API Status",
+              "source_url": "https://status.cloud.google.com/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "gemini",
+              "status_label": "Stable"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-status:elevated-error-rate-on-claude-opus-4-8",
+              "headline": "Elevated error rate on Claude Opus 4.8",
+              "summary": "Status: Resolved. This incident has been resolved.",
+              "source_name": "Claude Status",
+              "source_url": "https://status.claude.com/",
+              "published_at": "2026-06-24T14:56:21.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "claude",
+              "status_label": "Recently unstable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "llm_model_updates",
+      "title": "LLM/Model Updates",
+      "description": "Official provider changes summarized in plain English.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-news-rss:openai-and-broadcom-unveil-llm-optimized-inference-chip",
+              "headline": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+              "summary": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+              "published_at": "2026-06-24T06:00:00.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Notable"
+            },
+            {
+              "item_id": "openai-news-rss:samsung-electronics-brings-chatgpt-and-codex-to-employees",
+              "headline": "Samsung Electronics brings ChatGPT and Codex to employees",
+              "summary": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
+              "published_at": "2026-06-21T23:00:00.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Notable"
+            },
+            {
+              "item_id": "openai-news-rss:new-usage-analytics-and-updated-spend-controls-for-enterpris",
+              "headline": "New usage analytics and updated spend controls for enterprises",
+              "summary": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+              "published_at": "2026-06-18T17:00:00.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Notable"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-release-notes:gemini-release-notes",
+              "headline": "Gemini release notes",
+              "summary": "Explore the latest updates from Gemini Apps - including improvements in generative AI capabilities, expanded access, and more.",
+              "source_name": "Gemini Release Notes",
+              "source_url": "https://gemini.google/release-notes/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "gemini",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-release-notes:claude-release-notes",
+              "headline": "Claude release notes",
+              "summary": "Official Anthropic release notes covering Claude product changes, usability improvements, and rollout updates.",
+              "source_name": "Claude Release Notes",
+              "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "claude-code-whats-new:what-s-new",
+              "headline": "What's new",
+              "summary": "A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.",
+              "source_name": "Claude Code What's New",
+              "source_url": "https://code.claude.com/docs/en/whats-new",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Minor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "news",
+      "title": "News",
+      "description": "Curated AI business and investing coverage, kept separate from provider updates.",
+      "columns": [
+        {
+          "column_key": "investing_and_finance",
+          "label": "Investing and Finance",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:sunrun-surges-over-30-on-tesla-deal-to-supply-power-for-ai",
+              "headline": "Sunrun Surges Over 30% on Tesla Deal to Supply Power for AI",
+              "summary": "Sunrun Surges Over 30% on Tesla Deal to Supply Power for AI.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-24/sunrun-surges-over-30-on-deal-with-tesla-to-supply-power-for-ai?srnd=phx-ai",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "techcrunch-ai-news:openai-unveils-its-first-custom-chip-built-by-broadcom",
+              "headline": "OpenAI unveils its first custom chip, built by Broadcom",
+              "summary": "OpenAI unveils its first custom chip, built by Broadcom.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            },
+            {
+              "item_id": "cnbc-ai-news:cerebras-ceo-says-margin-forecast-was-apos-misunderstood-apo",
+              "headline": "Cerebras CEO says margin forecast was &apos;misunderstood&apos; as stock plummets after earnings",
+              "summary": "AI chipmaker Cerebras has a staggered lock-up expiration that includes some shares becoming available for trading this week.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/24/cerebras-cbrs-stock-earnings.html",
+              "published_at": "2026-06-24T16:12:46.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            }
+          ]
+        },
+        {
+          "column_key": "business_general",
+          "label": "Business General",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "techcrunch-ai-news:figma-adds-code-layers-support-for-animations-more-ai-featur",
+              "headline": "Figma adds code layers, support for animations, more AI features in new update",
+              "summary": "Figma adds code layers, support for animations, more AI features in new update.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "cnbc-ai-news:dow-inclusion-is-not-a-reason-to-buy-alphabet-but-these-othe",
+              "headline": "Dow inclusion is not a reason to buy Alphabet. But these other reasons may be",
+              "summary": "The recent crack in the AI trade might open the door.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/24/dow-inclusion-is-not-a-reason-to-buy-alphabet-but-these-other-reasons-may-be.html",
+              "published_at": "2026-06-24T16:28:19.000Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "techcrunch-ai-news:anthropic-s-claude-tag-is-learning-your-company-one-slack-me",
+              "headline": "Anthropic’s Claude Tag is learning your company, one Slack message at a time",
+              "summary": "Anthropic’s Claude Tag is learning your company, one Slack message at a time.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            }
+          ]
+        },
+        {
+          "column_key": "opinion",
+          "label": "Opinion",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:google-s-new-100-speaker-makes-a-weak-case-for-gemini-in-the",
+              "headline": "Google’s New $100 Speaker Makes a Weak Case for Gemini in the Home",
+              "summary": "Google’s New $100 Speaker Makes a Weak Case for Gemini in the Home.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/features/2026-06-24/google-home-speaker-review-impressive-ai-underwhelming-audio-quality?srnd=phx-ai",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "opinion"
+            },
+            {
+              "item_id": "techcrunch-ai-news:fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-w",
+              "headline": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates",
+              "summary": "Fika Jobs raises $4M to build a video-first hiring platform where AI agents interview candidates.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/23/fika-jobs-raises-4m-to-build-a-video-first-hiring-platform-where-ai-agents-interview-candidates/",
+              "published_at": "2026-06-24T16:41:28.469Z",
+              "source_checked_at": "2026-06-24T16:41:28.469Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "opinion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

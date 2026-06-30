@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-19T14:25:29.545Z",
+  "published_at": "2026-06-19T14:25:29.545Z",
+  "refresh_window_hours": 12,
+  "member_surface": "circle",
+  "renderer_mode": "fallback_preview",
+  "publish_state": "held_stale",
+  "review_summary": {
+    "reviewer_type": "system",
+    "notes": "43 item(s) auto-approved. 0 item(s) require human review. 12 item(s) blocked or suppressed."
+  },
+  "sections": [
+    {
+      "section_key": "llm_status",
+      "title": "LLM Status",
+      "description": "Operational signals from official provider status sources.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-status:fedramp-workspaces-and-api-orgs-have-degraded-performance",
+              "headline": "FedRAMP workspaces and API orgs have degraded performance",
+              "summary": "Status: Investigating.",
+              "source_name": "OpenAI Status",
+              "source_url": "https://status.openai.com/",
+              "published_at": "2026-06-18T19:41:22.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "openai",
+              "status_label": "Degraded"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-status:gemini-status",
+              "headline": "Gemini status",
+              "summary": "No active Gemini API incident is visible in the official Google Cloud incident feed in this snapshot.",
+              "source_name": "Gemini API Status",
+              "source_url": "https://status.cloud.google.com/",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "gemini",
+              "status_label": "Stable"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-status:elevated-error-rates-on-the-claude-api",
+              "headline": "Elevated error rates on the Claude API",
+              "summary": "Status: Resolved. This incident has been resolved.",
+              "source_name": "Claude Status",
+              "source_url": "https://status.claude.com/",
+              "published_at": "2026-06-19T08:45:47.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "status",
+              "provider_or_topic": "claude",
+              "status_label": "Recently unstable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "llm_model_updates",
+      "title": "LLM/Model Updates",
+      "description": "Official provider changes summarized in plain English.",
+      "columns": [
+        {
+          "column_key": "openai",
+          "label": "OpenAI",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "openai-news-rss:introducing-lifescibench",
+              "headline": "Introducing LifeSciBench",
+              "summary": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/introducing-life-sci-bench",
+              "published_at": "2026-06-17T00:00:00.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "openai-news-rss:introducing-the-openai-partner-network",
+              "headline": "Introducing the OpenAI Partner Network",
+              "summary": "OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/introducing-openai-partner-network",
+              "published_at": "2026-06-14T17:00:00.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "openai-news-rss:how-preply-combines-ai-and-human-tutors-to-personalize-learn",
+              "headline": "How Preply combines AI and human tutors to personalize learning",
+              "summary": "Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.",
+              "source_name": "OpenAI News",
+              "source_url": "https://openai.com/index/preply",
+              "published_at": "2026-06-12T00:00:00.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "openai",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "gemini",
+          "label": "Gemini",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "gemini-release-notes:gemini-release-notes",
+              "headline": "Gemini release notes",
+              "summary": "Explore the latest updates from Gemini Apps - including improvements in generative AI capabilities, expanded access, and more.",
+              "source_name": "Gemini Release Notes",
+              "source_url": "https://gemini.google/release-notes/",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "gemini",
+              "significance_tag": "Important"
+            }
+          ]
+        },
+        {
+          "column_key": "claude",
+          "label": "Claude",
+          "column_type": "provider",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "claude-release-notes:claude-release-notes",
+              "headline": "Claude release notes",
+              "summary": "Official Anthropic release notes covering Claude product changes, usability improvements, and rollout updates.",
+              "source_name": "Claude Release Notes",
+              "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Important"
+            },
+            {
+              "item_id": "claude-code-whats-new:what-s-new",
+              "headline": "What's new",
+              "summary": "A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.",
+              "source_name": "Claude Code What's New",
+              "source_url": "https://code.claude.com/docs/en/whats-new",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "update",
+              "provider_or_topic": "claude",
+              "significance_tag": "Minor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_key": "news",
+      "title": "News",
+      "description": "Curated AI business and investing coverage, kept separate from provider updates.",
+      "columns": [
+        {
+          "column_key": "investing_and_finance",
+          "label": "Investing and Finance",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "bloomberg-ai-news:lutnick-s-anthropic-crackdown-claims-new-power-over-ai-model",
+              "headline": "Lutnick’s Anthropic Crackdown Claims New Power Over AI Models",
+              "summary": "Lutnick’s Anthropic Crackdown Claims New Power Over AI Models.",
+              "source_name": "Bloomberg AI",
+              "source_url": "https://www.bloomberg.com/news/articles/2026-06-19/lutnick-s-anthropic-crackdown-claims-new-power-over-ai-models?srnd=phx-ai",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "investing_and_finance"
+            }
+          ]
+        },
+        {
+          "column_key": "business_general",
+          "label": "Business General",
+          "column_type": "topic",
+          "state": "ready",
+          "items": [
+            {
+              "item_id": "techcrunch-ai-news:the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees",
+              "headline": "The CEO of Allbirds’ new AI biz has a plan, but no employees",
+              "summary": "The CEO of Allbirds’ new AI biz has a plan, but no employees.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "cnbc-ai-news:memory-crisis-hits-such-extremes-that-apos-even-apple-can-ap",
+              "headline": "Memory crisis hits such extremes that &apos;even Apple can&apos;t be safe&apos;",
+              "summary": "Apple appears poised to take the rare step of increasing prices to deal with what CEO Tim Cook called an \"unsustainable\" memory shortage.",
+              "source_name": "CNBC AI",
+              "source_url": "https://www.cnbc.com/2026/06/19/memory-crisis-hits-such-extremes-that-even-apple-cant-be-safe-.html",
+              "published_at": "2026-06-19T12:00:02.000Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            },
+            {
+              "item_id": "techcrunch-ai-news:source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-t",
+              "headline": "Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M",
+              "summary": "Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M.",
+              "source_name": "TechCrunch AI",
+              "source_url": "https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/",
+              "published_at": "2026-06-19T14:25:29.545Z",
+              "source_checked_at": "2026-06-19T14:25:29.545Z",
+              "review_state": "approved",
+              "item_type": "news",
+              "provider_or_topic": "business_general"
+            }
+          ]
+        },
+        {
+          "column_key": "opinion",
+          "label": "Opinion",
+          "column_type": "topic",
+          "state": "empty",
+          "state_message": "No items cleared the relevance bar in this refresh window.",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

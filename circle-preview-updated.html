@@ -1,0 +1,1032 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Circle Preview</title></head><body><style>.ab-intelligence-desk {
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f0ff;
+  --color-surface-strong: #efe7ff;
+  --color-ink: #271a39;
+  --color-muted: #5c5074;
+  --color-line: #bfa6f8;
+  --color-brand: #7a44dc;
+  --color-brand-strong: #5f2acb;
+  --color-brand-soft: #f5f0ff;
+  --color-accent: #7a44dc;
+  --color-accent-soft: #f5f0ff;
+  --color-success: #157347;
+  --color-warning: #9a6700;
+  --color-danger: #b42318;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px}
+.ab-intelligence-desk .page-shell {
+  display:grid;
+  gap:var(--space-xl)}
+.ab-intelligence-desk .skip-link {
+  position:absolute;
+  left:16px;
+  top:-48px;
+  z-index:1000;
+  padding:10px 14px;
+  border-radius:var(--radius-md);
+  background:var(--color-ink);
+  color:#fff;
+  text-decoration:none}
+.ab-intelligence-desk .skip-link:focus {
+  top:16px}
+.ab-intelligence-desk .intro-shell {
+  padding:var(--space-lg);
+  display:grid;
+  gap:var(--space-lg);
+  background:radial-gradient(circle at top right,rgba(122,68,220,.16),transparent 30%),linear-gradient(180deg,#f5f0fff2,#fffffffc 62%);
+  box-shadow:0 18px 34px #271a3914}
+.ab-intelligence-desk .intro-shell__headline {
+  display:grid;
+  gap:var(--space-lg);
+  grid-template-columns:minmax(0,1fr) minmax(280px,320px);
+  align-items:start}
+.ab-intelligence-desk .intro-shell__headline>* {
+  min-width:0}
+.ab-intelligence-desk .intro-shell__lede {
+  max-width:58ch;
+  font-size:1.1rem;
+  line-height:1.65}
+.ab-intelligence-desk .intro-shell__guidance {
+  padding-top:12px;
+  border-top:1px solid var(--color-line)}
+.ab-intelligence-desk .freshness-card {
+  display:grid;
+  gap:8px;
+  padding:var(--space-md);
+  border:1px solid var(--color-line);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(180deg,#fffffffa,#f5f0ffeb);
+  box-shadow:inset 0 0 0 1px #7a44dc14}
+.ab-intelligence-desk .freshness-card__label {
+  color:var(--color-muted);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase}
+.ab-intelligence-desk .freshness-card strong {
+  font-size:1rem}
+.ab-intelligence-desk .eyebrow {
+  margin:0 0 8px;
+  color:var(--color-brand);
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase}
+.ab-intelligence-desk .intro-shell h1, .ab-intelligence-desk .section-shell__header h2 {
+  color:var(--color-ink);
+  letter-spacing:-.02em;
+  font-family:Inter,sans-serif}
+.ab-intelligence-desk .intro-shell h1 {
+  font-size:clamp(1.85rem,3vw,2.5rem);
+  line-height:1.05;
+  max-width:14ch;
+  word-break:normal;
+  overflow-wrap:normal}
+.ab-intelligence-desk .intro-shell, .ab-intelligence-desk .section-shell, .ab-intelligence-desk .column-card, .ab-intelligence-desk .item-card, .ab-intelligence-desk .empty-state-card, .ab-intelligence-desk .stale-state-card {
+  border:1px solid rgba(122,68,220,.28);
+  border-radius:var(--radius-lg);
+  background:var(--color-surface)}
+.ab-intelligence-desk .section-shell__header, .ab-intelligence-desk .column-card__header, .ab-intelligence-desk .column-card__body, .ab-intelligence-desk .item-card, .ab-intelligence-desk .empty-state-card, .ab-intelligence-desk .stale-state-card {
+  padding:var(--space-md)}
+.ab-intelligence-desk .section-shell {
+  display:grid;
+  gap:var(--space-md);
+  box-shadow:0 16px 30px #271a390f}
+.ab-intelligence-desk .section-shell--primary {
+  opacity:1}
+.ab-intelligence-desk .section-shell--secondary {
+  opacity:.94}
+.ab-intelligence-desk .section-shell__eyebrow-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:6px}
+.ab-intelligence-desk .section-shell__eyebrow, .ab-intelligence-desk .section-shell__ordinal {
+  margin:0;
+  color:var(--color-brand);
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase}
+.ab-intelligence-desk .section-shell__ordinal {
+  padding:4px 9px;
+  border-radius:999px;
+  border:1px solid rgba(122,68,220,.24);
+  background:#f5f0fff2}
+.ab-intelligence-desk .section-shell__guidance {
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px dashed rgba(122,68,220,.25);
+  font-size:.94rem;
+  line-height:1.5}
+.ab-intelligence-desk .section-shell__notice {
+  margin:0;
+  padding:12px 14px;
+  border:1px solid rgba(122,68,220,.18);
+  border-radius:var(--radius-md);
+  background:linear-gradient(180deg,#f5f0ffeb,#fffffff5);
+  color:var(--color-muted);
+  font-size:.92rem;
+  line-height:1.5}
+.ab-intelligence-desk .section-shell--status {
+  background:linear-gradient(180deg,#f5f0fff5,#fffffffc 26%),var(--color-surface);
+  box-shadow:inset 0 0 0 1px #7a44dc1a}
+.ab-intelligence-desk .section-shell--updates {
+  background:linear-gradient(180deg,#f5f0fff0,#fffffffc 26%),var(--color-surface);
+  box-shadow:inset 0 0 0 1px #7a44dc1a}
+.ab-intelligence-desk .section-shell--news {
+  background:linear-gradient(180deg,#f5f0ffc7,#fffffffc 24%),var(--color-surface);
+  box-shadow:inset 0 0 0 1px #7a44dc14}
+.ab-intelligence-desk .section-grid {
+  display:grid;
+  gap:var(--space-md);
+  grid-template-columns:repeat(3,minmax(0,1fr))}
+.ab-intelligence-desk .column-card {
+  display:grid;
+  gap:var(--space-md);
+  align-content:start;
+  background:linear-gradient(180deg,#f5f0ff9e,#fffffffc);
+  min-width:0;
+  box-shadow:0 10px 24px #271a390d}
+.ab-intelligence-desk .column-card__header h3, .ab-intelligence-desk .item-card__headline {
+  margin:0}
+.ab-intelligence-desk .column-card__header h3 {
+  font-size:1.06rem;
+  color:var(--color-ink)}
+.ab-intelligence-desk .column-card__body {
+  display:grid;
+  gap:var(--space-md);
+  min-width:0}
+.ab-intelligence-desk .item-card {
+  display:grid;
+  gap:12px;
+  min-width:0;
+  background:linear-gradient(180deg,#fff,#f5f0ff47);
+  box-shadow:0 10px 20px #271a390a}
+.ab-intelligence-desk .item-card--status {
+  border-width:2px}
+.ab-intelligence-desk .item-card--stable {
+  background:linear-gradient(180deg,#e4f4eaeb,#fffffffc 32%),var(--color-surface)}
+.ab-intelligence-desk .item-card--degraded {
+  background:linear-gradient(180deg,#fff1dffa,#fffffffc 32%),var(--color-surface)}
+.ab-intelligence-desk .item-card--outage {
+  background:linear-gradient(180deg,#fdebe9fa,#fffffffc 32%),var(--color-surface)}
+.ab-intelligence-desk .item-card--recently-unstable {
+  background:linear-gradient(180deg,#f5f0fffa,#fffffffc 32%),var(--color-surface)}
+.ab-intelligence-desk .item-card__headline a, .ab-intelligence-desk .metadata-row a {
+  color:var(--color-ink);
+  overflow-wrap:anywhere;
+  text-decoration-thickness:1px;
+  text-underline-offset:2px}
+.ab-intelligence-desk .item-card__headline a {
+  text-decoration:none}
+.ab-intelligence-desk .item-card__headline a:hover {
+  color:var(--color-brand)}
+.ab-intelligence-desk a:focus-visible {
+  outline:3px solid var(--color-brand);
+  outline-offset:3px;
+  border-radius:4px}
+.ab-intelligence-desk .item-card__summary, .ab-intelligence-desk .metadata-row, .ab-intelligence-desk .section-shell__header p, .ab-intelligence-desk .intro-shell p, .ab-intelligence-desk .empty-state-card p, .ab-intelligence-desk .stale-state-card p {
+  margin:0;
+  word-break:normal;
+  overflow-wrap:anywhere}
+.ab-intelligence-desk .empty-state-card h4, .ab-intelligence-desk .stale-state-card h4 {
+  margin:0;
+  font-size:.98rem}
+.ab-intelligence-desk .item-card__topline {
+  min-height:24px}
+.ab-intelligence-desk .item-card__headline {
+  font-size:1.04rem;
+  line-height:1.4;
+  font-weight:700;
+  letter-spacing:-.01em}
+.ab-intelligence-desk .item-card__summary {
+  color:var(--color-ink);
+  line-height:1.62;
+  font-size:.95rem;
+  display:-webkit-box;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical;
+  overflow:hidden}
+.ab-intelligence-desk .item-card__source-forward {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 10px;
+  margin:0;
+  color:var(--color-muted);
+  font-size:.82rem;
+  line-height:1.45}
+.ab-intelligence-desk .item-card__source-prefix {
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase}
+.ab-intelligence-desk .item-card__summary-prefix {
+  margin-right:6px;
+  color:var(--color-brand);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.03em;
+  text-transform:uppercase}
+.ab-intelligence-desk .item-card__actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center}
+.ab-intelligence-desk .item-card__source-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:40px;
+  padding:0 14px;
+  border-radius:999px;
+  background:var(--color-brand);
+  color:#fff!important;
+  font-size:.86rem;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 18px #7a44dc2e}
+.ab-intelligence-desk .item-card__source-link:hover {
+  background:var(--color-brand-strong)}
+.ab-intelligence-desk .item-card__source-meta {
+  color:var(--color-muted);
+  font-size:.82rem}
+.ab-intelligence-desk .item-card--update {
+  background:linear-gradient(180deg,#f5f0ffeb,#fffffffc 30%),var(--color-surface)}
+.ab-intelligence-desk .item-card--news {
+  background:linear-gradient(180deg,#f5f0ffc2,#fffffffc 30%),var(--color-surface)}
+.ab-intelligence-desk .section-shell--secondary .section-shell__header h2 {
+  font-size:1.35rem}
+.ab-intelligence-desk .section-shell--secondary .section-shell__guidance, .ab-intelligence-desk .section-shell--secondary .section-shell__header>p {
+  color:var(--color-muted)}
+.ab-intelligence-desk .item-card--minor {
+  border-left:4px solid #a0a6ae}
+.ab-intelligence-desk .item-card--notable {
+  border-left:4px solid #9b6a16}
+.ab-intelligence-desk .item-card--important {
+  border-left:4px solid #a54b12}
+.ab-intelligence-desk .item-card--watch-closely {
+  border-left:4px solid #8b1e3f}
+.ab-intelligence-desk .item-card__footer {
+  padding-top:8px;
+  border-top:1px solid rgba(219,228,240,.92)}
+.ab-intelligence-desk .metadata-row {
+  display:grid;
+  gap:8px 12px;
+  color:var(--color-muted);
+  font-size:.9rem;
+  overflow-wrap:anywhere}
+.ab-intelligence-desk .metadata-pill {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 10px;
+  align-items:center}
+.ab-intelligence-desk .metadata-pill__label {
+  display:inline-flex;
+  align-items:center;
+  padding:2px 8px;
+  border-radius:999px;
+  border:1px solid rgba(122,68,220,.18);
+  color:var(--color-brand);
+  background:#f5f0fffa;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase}
+.ab-intelligence-desk .status-badge, .ab-intelligence-desk .significance-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+  border:1px solid currentColor}
+.ab-intelligence-desk .badge-prefix {
+  font-size:.72rem;
+  letter-spacing:.04em;
+  text-transform:uppercase}
+.ab-intelligence-desk .state-card__label {
+  display:inline-flex;
+  align-items:center;
+  width:fit-content;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid var(--color-line);
+  color:var(--color-muted);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase}
+.ab-intelligence-desk .empty-state-card, .ab-intelligence-desk .stale-state-card {
+  display:grid;
+  gap:10px}
+.ab-intelligence-desk .empty-state-card {
+  background:linear-gradient(180deg,#ffffffdb,#f8f4ebe6)}
+.ab-intelligence-desk .empty-state-card--news {
+  background:linear-gradient(180deg,#f4f7fce0,#faf8f2f5)}
+.ab-intelligence-desk .stale-state-card--source_delayed {
+  background:linear-gradient(180deg,#f8eedbf2,#fffdf8f5)}
+.ab-intelligence-desk .stale-state-card--stale {
+  background:linear-gradient(180deg,#edece8f2,#fffdf8f5)}
+.ab-intelligence-desk .status-badge, .ab-intelligence-desk .status-badge--stable {
+  color:var(--color-success);
+  background:#e7f4ec}
+.ab-intelligence-desk .status-badge--degraded {
+  color:var(--color-warning);
+  background:var(--color-accent-soft)}
+.ab-intelligence-desk .status-badge--outage {
+  color:var(--color-danger);
+  background:#f8d7d5}
+.ab-intelligence-desk .status-badge--recently-unstable, .ab-intelligence-desk .significance-badge {
+  color:var(--color-brand-strong);
+  background:var(--color-brand-soft)}
+.ab-intelligence-desk .significance-badge--minor {
+  color:#4d5662;
+  background:#e7eaef}
+.ab-intelligence-desk .significance-badge--notable {
+  color:var(--color-warning);
+  background:var(--color-accent-soft)}
+.ab-intelligence-desk .significance-badge--important {
+  color:#9c3d00;
+  background:#ffe7cf}
+.ab-intelligence-desk .significance-badge--watch-closely {
+  color:var(--color-brand-strong);
+  background:var(--color-brand-soft)}
+@media(max-width:1280px) {
+  .intro-shell__headline {
+  grid-template-columns:1fr}
+.ab-intelligence-desk .freshness-card {
+  justify-self:start;
+  max-width:none}
+.ab-intelligence-desk .section-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:960px) {
+  .intro-shell,.section-shell,.column-card__header,.column-card__body,.item-card,.empty-state-card,.stale-state-card {
+  padding:14px}
+.ab-intelligence-desk .section-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:840px) {
+  .section-grid {
+  grid-template-columns:1fr}
+}
+@media(max-width:720px) {
+  .page-shell {
+  padding-bottom:var(--space-lg)}
+.ab-intelligence-desk .intro-shell h1 {
+  font-size:2rem;
+  line-height:1.08;
+  max-width:none}
+.ab-intelligence-desk .intro-shell__lede {
+  max-width:none;
+  font-size:1rem;
+  line-height:1.55}
+}
+@media(max-width:540px) {
+  .intro-shell,.section-shell {
+  gap:14px}
+.ab-intelligence-desk .intro-shell, .ab-intelligence-desk .section-shell, .ab-intelligence-desk .column-card__header, .ab-intelligence-desk .column-card__body, .ab-intelligence-desk .item-card, .ab-intelligence-desk .empty-state-card, .ab-intelligence-desk .stale-state-card {
+  padding:12px}
+.ab-intelligence-desk .intro-shell__headline {
+  gap:12px}
+.ab-intelligence-desk .freshness-card {
+  padding:12px}
+.ab-intelligence-desk .item-card__actions {
+  gap:8px}
+.ab-intelligence-desk .item-card__source-link {
+  width:100%}
+}
+.ab-intelligence-desk, .ab-intelligence-desk {
+  margin:0;
+  padding:0;
+  background:var(--color-background);
+  color:var(--color-ink);
+  font-family:"Source Sans 3",sans-serif}
+.ab-intelligence-desk {
+  min-height:100vh}
+.ab-intelligence-desk .page-shell {
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px}
+.ab-intelligence-desk .intro-shell, .ab-intelligence-desk .section-shell {
+  padding:var(--space-lg)}
+.ab-intelligence-desk .section-shell__header h2, .ab-intelligence-desk .intro-shell h1 {
+  margin-top:0}
+.ab-intelligence-desk {
+  --color-background:#ffffff!important;
+  --color-surface:#ffffff!important;
+  --color-surface-alt:#f5f0ff!important;
+  --color-surface-strong:#efe7ff!important;
+  --color-ink:#271a39!important;
+  --color-muted:#5c5074!important;
+  --color-line:#bfa6f8!important;
+  --color-brand:#7a44dc!important;
+  --color-brand-strong:#5f2acb!important;
+  --color-brand-soft:#f5f0ff!important;
+  --color-accent:#7a44dc!important;
+  --color-accent-soft:#f5f0ff!important;
+  --color-success:#157347!important;
+  --color-warning:#9a6700!important;
+  --color-danger:#b42318!important;
+  min-height:auto!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  color:var(--color-ink)!important;
+  }
+.ab-intelligence-desk .skip-link {
+  display:none!important;
+  }
+.ab-intelligence-desk .page-shell {
+  box-sizing:border-box!important;
+  max-width:1200px!important;
+  width:100%!important;
+  margin:0 auto!important;
+  padding:20px!important;
+  gap:24px!important;
+  }
+.ab-intelligence-desk .page-shell,.ab-intelligence-desk .intro-shell h1,.ab-intelligence-desk .section-shell__header h2,.ab-intelligence-desk .column-card__header h3,.ab-intelligence-desk .item-card__headline {
+  font-family:"Source Sans 3",system-ui,sans-serif!important;
+  }
+.ab-intelligence-desk .intro-shell,.ab-intelligence-desk .section-shell {
+  padding:16px!important;
+  }
+.ab-intelligence-desk .intro-shell {
+  background:linear-gradient(180deg,rgba(255,255,255,.99),rgba(245,240,255,.55) 62%)!important;
+  box-shadow:0 18px 34px rgba(39,26,57,.08)!important;
+  border-color:rgba(191,166,248,.34)!important;
+  }
+.ab-intelligence-desk .section-shell,.ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card,.ab-intelligence-desk .empty-state-card,.ab-intelligence-desk .stale-state-card,.ab-intelligence-desk .loading-card,.ab-intelligence-desk .error-card,.ab-intelligence-desk .config-card,.ab-intelligence-desk .freshness-card {
+  border-color:rgba(191,166,248,.28)!important;
+  }
+.ab-intelligence-desk .intro-shell__headline {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(280px,320px)!important;
+  align-items:start!important;
+  gap:24px!important;
+  }
+.ab-intelligence-desk .intro-shell__headline>* {
+  min-width:0!important;
+  }
+.ab-intelligence-desk .intro-shell h1 {
+  max-width:14ch!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  }
+.ab-intelligence-desk .intro-shell__lede,.ab-intelligence-desk .intro-shell__guidance p,.ab-intelligence-desk .section-shell__header p,.ab-intelligence-desk .item-card__summary {
+  word-break:normal!important;
+  overflow-wrap:anywhere!important;
+  }
+.ab-intelligence-desk .eyebrow,.ab-intelligence-desk .section-shell__eyebrow,.ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .item-card__summary-prefix,.ab-intelligence-desk .metadata-pill__label {
+  color:var(--color-accent)!important;
+  }
+.ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .metadata-pill__label {
+  border-color:rgba(191,166,248,.36)!important;
+  background:rgba(245,240,255,.95)!important;
+  }
+.ab-intelligence-desk .freshness-card {
+  width:100%!important;
+  max-width:320px!important;
+  justify-self:end!important;
+  }
+.ab-intelligence-desk .freshness-card,.ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card--update,.ab-intelligence-desk .item-card--news,.ab-intelligence-desk .item-card--recently-unstable,.ab-intelligence-desk .section-shell--status,.ab-intelligence-desk .section-shell--updates,.ab-intelligence-desk .section-shell--news {
+  background:linear-gradient(180deg,rgba(255,255,255,.99),rgba(245,240,255,.62))!important;
+  box-shadow:none!important;
+  }
+.ab-intelligence-desk .section-grid {
+  align-items:start;
+  }
+.ab-intelligence-desk .item-card__headline a,.ab-intelligence-desk .metadata-row a {
+  color:var(--color-ink)!important;
+  }
+.ab-intelligence-desk .item-card__headline a:hover,.ab-intelligence-desk .metadata-row a:hover {
+  color:var(--color-accent)!important;
+  }
+.ab-intelligence-desk .item-card__source-link {
+  background:var(--color-brand-strong)!important;
+  color:#fff!important;
+  box-shadow:0 8px 18px rgba(95,42,203,.18)!important;
+  }
+.ab-intelligence-desk .item-card__source-link:hover {
+  background:var(--color-brand)!important;
+  }
+.ab-intelligence-desk .section-shell__guidance {
+  border-top:1px dashed rgba(191,166,248,.3)!important;
+  }
+.ab-intelligence-desk .intro-shell__guidance {
+  border-top:1px solid rgba(191,166,248,.34)!important;
+  }
+.ab-intelligence-desk .section-shell__ordinal,.ab-intelligence-desk .status-badge--recently-unstable,.ab-intelligence-desk .significance-badge,.ab-intelligence-desk .significance-badge--watch-closely {
+  background:rgba(245,240,255,.95)!important;
+  color:var(--color-accent)!important;
+  }
+.ab-intelligence-desk .column-card,.ab-intelligence-desk .item-card,.ab-intelligence-desk .section-shell {
+  box-shadow:none!important;
+  }
+.ab-intelligence-desk .item-card--stable {
+  background:linear-gradient(180deg,rgba(232,245,236,.92),rgba(255,255,255,.99) 32%)!important;
+  }
+.ab-intelligence-desk .item-card--degraded {
+  background:linear-gradient(180deg,rgba(255,243,225,.96),rgba(255,255,255,.99) 32%)!important;
+  }
+.ab-intelligence-desk .item-card--outage {
+  background:linear-gradient(180deg,rgba(252,234,230,.96),rgba(255,255,255,.99) 32%)!important;
+  }
+.ab-intelligence-desk .state-card__label {
+  white-space:nowrap;
+  }
+.ab-intelligence-desk .loading-card,.ab-intelligence-desk .error-card {
+  display:grid;
+  gap:12px;
+  padding:16px;
+  border:1px solid var(--color-line);
+  border-radius:var(--radius-lg);
+  background:var(--color-surface);
+  }
+.ab-intelligence-desk .config-card {
+  display:grid;
+  gap:10px;
+  padding:16px;
+  border:1px dashed var(--color-line);
+  border-radius:var(--radius-lg);
+  background:var(--color-surface-alt);
+  }
+.ab-intelligence-desk .config-card code,.ab-intelligence-desk .error-card code {
+  word-break:break-all;
+  }
+@media(max-width:1100px) {
+  .ab-intelligence-desk .intro-shell__headline {
+  grid-template-columns:1fr!important;
+  }
+.ab-intelligence-desk .freshness-card {
+  justify-self:start!important;
+  max-width:none!important;
+  }
+}
+@media(max-width:960px) {
+  .ab-intelligence-desk .section-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+@media(max-width:840px) {
+  .ab-intelligence-desk .section-grid {
+  grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:720px) {
+  .ab-intelligence-desk .page-shell {
+  padding:16px!important;
+  gap:16px!important;
+  }
+.ab-intelligence-desk .intro-shell h1 {
+  font-size:2rem!important;
+  line-height:1.08!important;
+  max-width:none!important;
+  }
+.ab-intelligence-desk .intro-shell__lede {
+  font-size:1rem!important;
+  line-height:1.55!important;
+  }
+}
+@media(max-width:540px) {
+  .ab-intelligence-desk .page-shell {
+  padding:12px!important;
+  }
+.ab-intelligence-desk .intro-shell,.ab-intelligence-desk .section-shell,.ab-intelligence-desk .column-card__header,.ab-intelligence-desk .column-card__body,.ab-intelligence-desk .item-card,.ab-intelligence-desk .empty-state-card,.ab-intelligence-desk .stale-state-card {
+  padding:12px!important;
+  }
+.ab-intelligence-desk .intro-shell,.ab-intelligence-desk .section-shell {
+  gap:14px!important;
+  }
+.ab-intelligence-desk .intro-shell__headline {
+  gap:12px!important;
+  }
+.ab-intelligence-desk .freshness-card {
+  padding:12px!important;
+  }
+.ab-intelligence-desk .item-card__actions {
+  gap:8px!important;
+  }
+.ab-intelligence-desk .item-card__source-link {
+  width:100%!important;
+  }
+}body{margin:0;padding:24px;background:#f6f4ef;font-family:"Source Sans 3",sans-serif;}</style><div class="ab-intelligence-desk" data-snapshot-url="https://stradtmann73.github.io/IntelligenceDesk/snapshot.json"></div><script>(function () {
+  const root = document.currentScript.previousElementSibling;
+  if (!root) return;
+
+  const placeholderUrl = "https://YOUR-HOSTED-SNAPSHOT-URL/snapshot.json";
+  const bootstrapSnapshot = {"schema_version":"1.0.0","generated_at":"2026-06-19T15:03:57.934Z","published_at":"2026-06-19T15:03:57.934Z","refresh_window_hours":6,"member_surface":"circle","renderer_mode":"fallback_preview","publish_state":"held_stale","review_summary":{"reviewer_type":"system","notes":"44 item(s) auto-approved. 0 item(s) require human review. 12 item(s) blocked or suppressed."},"sections":[{"section_key":"llm_status","title":"LLM Status","description":"Operational signals from official provider status sources.","columns":[{"column_key":"openai","label":"OpenAI","column_type":"provider","state":"ready","items":[{"item_id":"openai-status:fedramp-workspaces-and-api-orgs-have-degraded-performance","headline":"FedRAMP workspaces and API orgs have degraded performance","summary":"Status: Investigating.","source_name":"OpenAI Status","source_url":"https://status.openai.com/","published_at":"2026-06-18T19:41:22.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"status","provider_or_topic":"openai","status_label":"Degraded"}]},{"column_key":"gemini","label":"Gemini","column_type":"provider","state":"ready","items":[{"item_id":"gemini-status:gemini-status","headline":"Gemini status","summary":"No active Gemini API incident is visible in the official Google Cloud incident feed in this snapshot.","source_name":"Gemini API Status","source_url":"https://status.cloud.google.com/","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"status","provider_or_topic":"gemini","status_label":"Stable"}]},{"column_key":"claude","label":"Claude","column_type":"provider","state":"ready","items":[{"item_id":"claude-status:elevated-error-rates-on-the-claude-api","headline":"Elevated error rates on the Claude API","summary":"Status: Resolved. This incident has been resolved.","source_name":"Claude Status","source_url":"https://status.claude.com/","published_at":"2026-06-19T08:45:47.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"status","provider_or_topic":"claude","status_label":"Recently unstable"}]}]},{"section_key":"llm_model_updates","title":"LLM/Model Updates","description":"Official provider changes summarized in plain English.","columns":[{"column_key":"openai","label":"OpenAI","column_type":"provider","state":"ready","items":[{"item_id":"openai-news-rss:introducing-lifescibench","headline":"Introducing LifeSciBench","summary":"Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.","source_name":"OpenAI News","source_url":"https://openai.com/index/introducing-life-sci-bench","published_at":"2026-06-17T00:00:00.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"openai","significance_tag":"Important"},{"item_id":"openai-news-rss:introducing-the-openai-partner-network","headline":"Introducing the OpenAI Partner Network","summary":"OpenAI launches the Partner Network, investing $150M to help global partners accelerate enterprise AI adoption, deployment, and transformation.","source_name":"OpenAI News","source_url":"https://openai.com/index/introducing-openai-partner-network","published_at":"2026-06-14T17:00:00.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"openai","significance_tag":"Important"},{"item_id":"openai-news-rss:how-preply-combines-ai-and-human-tutors-to-personalize-learn","headline":"How Preply combines AI and human tutors to personalize learning","summary":"Preply uses OpenAI to launch AI-generated lesson summaries, providing personalised feedback and language learning exercises.","source_name":"OpenAI News","source_url":"https://openai.com/index/preply","published_at":"2026-06-12T00:00:00.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"openai","significance_tag":"Important"}]},{"column_key":"gemini","label":"Gemini","column_type":"provider","state":"ready","items":[{"item_id":"gemini-release-notes:gemini-release-notes","headline":"Gemini release notes","summary":"Explore the latest updates from Gemini Apps - including improvements in generative AI capabilities, expanded access, and more.","source_name":"Gemini Release Notes","source_url":"https://gemini.google/release-notes/","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"gemini","significance_tag":"Important"}]},{"column_key":"claude","label":"Claude","column_type":"provider","state":"ready","items":[{"item_id":"claude-release-notes:claude-release-notes","headline":"Claude release notes","summary":"Official Anthropic release notes covering Claude product changes, usability improvements, and rollout updates.","source_name":"Claude Release Notes","source_url":"https://support.claude.com/en/articles/12138966-release-notes","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"claude","significance_tag":"Important"},{"item_id":"claude-code-whats-new:what-s-new","headline":"What's new","summary":"A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.","source_name":"Claude Code What's New","source_url":"https://code.claude.com/docs/en/whats-new","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"update","provider_or_topic":"claude","significance_tag":"Minor"}]}]},{"section_key":"news","title":"News","description":"Curated AI business and investing coverage, kept separate from provider updates.","columns":[{"column_key":"investing_and_finance","label":"Investing and Finance","column_type":"topic","state":"ready","items":[{"item_id":"bloomberg-ai-news:unitedhealth-s-3-billion-ai-push-has-bots-calling-doctors","headline":"UnitedHealth’s $3 Billion AI Push Has Bots Calling Doctors","summary":"UnitedHealth’s $3 Billion AI Push Has Bots Calling Doctors.","source_name":"Bloomberg AI","source_url":"https://www.bloomberg.com/news/articles/2026-06-19/unitedhealth-bets-3-billion-on-ai-to-cut-costs-tame-backlash?srnd=phx-ai","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"news","provider_or_topic":"investing_and_finance"},{"item_id":"bloomberg-ai-news:lutnick-s-anthropic-crackdown-claims-new-power-over-ai-model","headline":"Lutnick’s Anthropic Crackdown Claims New Power Over AI Models","summary":"Lutnick’s Anthropic Crackdown Claims New Power Over AI Models.","source_name":"Bloomberg AI","source_url":"https://www.bloomberg.com/news/articles/2026-06-19/lutnick-s-anthropic-crackdown-claims-new-power-over-ai-models?srnd=phx-ai","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"news","provider_or_topic":"investing_and_finance"}]},{"column_key":"business_general","label":"Business General","column_type":"topic","state":"ready","items":[{"item_id":"techcrunch-ai-news:the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees","headline":"The CEO of Allbirds’ new AI biz has a plan, but no employees","summary":"The CEO of Allbirds’ new AI biz has a plan, but no employees.","source_name":"TechCrunch AI","source_url":"https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"news","provider_or_topic":"business_general"},{"item_id":"cnbc-ai-news:memory-crisis-hits-such-extremes-that-apos-even-apple-can-ap","headline":"Memory crisis hits such extremes that &apos;even Apple can&apos;t be safe&apos;","summary":"Apple appears poised to take the rare step of increasing prices to deal with what CEO Tim Cook called an \"unsustainable\" memory shortage.","source_name":"CNBC AI","source_url":"https://www.cnbc.com/2026/06/19/memory-crisis-hits-such-extremes-that-even-apple-cant-be-safe-.html","published_at":"2026-06-19T12:00:02.000Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"news","provider_or_topic":"business_general"},{"item_id":"techcrunch-ai-news:source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-t","headline":"Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M","summary":"Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M.","source_name":"TechCrunch AI","source_url":"https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/","published_at":"2026-06-19T15:03:57.934Z","source_checked_at":"2026-06-19T15:03:57.934Z","review_state":"approved","item_type":"news","provider_or_topic":"business_general"}]},{"column_key":"opinion","label":"Opinion","column_type":"topic","state":"empty","state_message":"No items cleared the relevance bar in this refresh window.","items":[]}]}]};
+  const useBootstrapSnapshot = window.location.protocol === "file:";
+  const snapshotUrl = useBootstrapSnapshot ? "" : (root.dataset.snapshotUrl || placeholderUrl);
+  const refreshIntervalMs = 5 * 60 * 1000;
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatDate(value) {
+    try {
+      return new Date(value).toLocaleString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short"
+      });
+    } catch {
+      return value;
+    }
+  }
+
+  function slug(value) {
+    return String(value ?? "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function cleanText(value) {
+    return String(value ?? "")
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201c\u201d]/g, '"')
+      .replace(/\u00e2\u20ac\u2122/g, "'")
+      .replace(/\u00e2\u20ac(?:\u0153|\u009d)/g, '"')
+      .replace(/\u00c2\u00b7/g, "\u00b7")
+      .replace(/\u00c2/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function sanitizeHeadline(item) {
+    const rawHeadline = cleanText(item.headline);
+
+    if (/status snapshot/i.test(rawHeadline)) {
+      return item.provider_or_topic
+        ? String(item.provider_or_topic).charAt(0).toUpperCase() + String(item.provider_or_topic).slice(1) + " status"
+        : "Current status";
+    }
+
+    if (/release notes snapshot/i.test(rawHeadline)) {
+      return item.provider_or_topic
+        ? String(item.provider_or_topic).charAt(0).toUpperCase() + String(item.provider_or_topic).slice(1) + " release notes"
+        : "Release notes";
+    }
+
+    if (/what's new snapshot/i.test(rawHeadline)) {
+      return "What's new";
+    }
+
+    return rawHeadline;
+  }
+
+  function sanitizeSummary(item) {
+    let text = cleanText(item.summary);
+    text = text
+      .replace(/^Official status read:\s*/i, "")
+      .replace(/^Plain-English takeaway:\s*/i, "")
+      .replace(/^Why it matters:\s*/i, "")
+      .replace(/Subscribe to updates?/gi, "")
+      .replace(/Subscribe x/gi, "")
+      .replace(/Get email notifications.*$/i, "")
+      .replace(/Skip to main content/gi, "")
+      .replace(/Documentation Index.*$/i, "")
+      .replace(/This page provides status information[^.]*\./i, "")
+      .replace(/Check back here to view[^.]*\./i, "")
+      .replace(/English\s+Fran.*$/i, "")
+      .replace(/API Docs Release Notes.*$/i, "")
+      .replace(/We’re currently experiencing issues/i, "Current issue:")
+      .replace(/We're currently experiencing issues/i, "Current issue:")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (item.item_type === "status") {
+      if (/degraded performance/i.test(text)) {
+        text = text.replace(/Investigating.*$/i, "").trim();
+      }
+
+      if (/^Current issue:/i.test(text)) {
+        return text;
+      }
+
+      if (!text || text.length < 30) {
+        return item.status_label === "Stable"
+          ? "No active issue is visible on the official provider status page in this snapshot."
+          : "The provider status page indicates an active issue or degraded service in this snapshot.";
+      }
+    }
+
+    if (item.item_type === "update" && !text) {
+      return "Official provider update captured in this snapshot.";
+    }
+
+    if (item.item_type === "news" && !text) {
+      return "Relevant AI business coverage surfaced in this snapshot.";
+    }
+
+    return text;
+  }
+
+  function sectionHasMixedFreshness(section) {
+    return section.section_key === "news" &&
+      (section.columns || []).some((column) => column.state === "ready" && (column.items || []).length > 0) &&
+      (section.columns || []).some((column) => column.state === "stale");
+  }
+
+  function getStateCardCopy(section, column) {
+    if (column.state === "empty") {
+      return {
+        label: "Curated Gap",
+        title: "Nothing strong enough to feature",
+        message: column.state_message || "No current item is available."
+      };
+    }
+
+    if (column.state === "source_delayed") {
+      return {
+        label: "Delayed",
+        title: "Source check delayed",
+        message: column.state_message || "No current item is available."
+      };
+    }
+
+    if (section.section_key === "news") {
+      const hasFreshPeers = (section.columns || []).some((candidate) =>
+        candidate.column_key !== column.column_key &&
+        candidate.state === "ready" &&
+        (candidate.items || []).length > 0
+      );
+
+      return {
+        label: column.column_key === "investing_and_finance" ? "Finance delayed" : "Topic delayed",
+        title: column.label + " refresh delayed",
+        message: hasFreshPeers
+          ? column.label + " is temporarily showing the last verified items. Other news columns in this section were refreshed more recently."
+          : column.label + " is temporarily showing the last verified items until fresh verification completes."
+      };
+    }
+
+    return {
+      label: "Stale",
+      title: "Last verified view",
+      message: column.state_message || "No current item is available."
+    };
+  }
+
+  function renderStateCard(section, column) {
+    if (!column.state || column.state === "ready") return "";
+    const copy = getStateCardCopy(section, column);
+    return `
+      <article class="stale-state-card stale-state-card--${escapeHtml(column.state)}">
+        <span class="state-card__label">${escapeHtml(copy.label)}</span>
+        <h4>${escapeHtml(copy.title)}</h4>
+        <p>${escapeHtml(copy.message)}</p>
+      </article>
+    `;
+  }
+
+  function renderBadge(item) {
+    if (item.item_type === "status") {
+      const tone = slug(item.status_label || "stable");
+      return `
+        <span class="status-badge status-badge--${escapeHtml(tone)}" aria-label="Status: ${escapeHtml(item.status_label || "Stable")}">
+          <span class="badge-prefix">Status</span>
+          <span>${escapeHtml(item.status_label || "Stable")}</span>
+        </span>
+      `;
+    }
+
+    if (item.item_type === "update") {
+      const tone = slug(item.significance_tag || "minor");
+      return `
+        <span class="significance-badge significance-badge--${escapeHtml(tone)}" aria-label="Significance: ${escapeHtml(item.significance_tag || "Minor")}">
+          <span class="badge-prefix">Signal</span>
+          <span>${escapeHtml(item.significance_tag || "Minor")}</span>
+        </span>
+      `;
+    }
+
+    return "";
+  }
+
+  function renderSourceForward(item) {
+    return `
+      <p class="item-card__source-forward">
+        <span class="item-card__source-prefix">Source:</span>
+        <span>${escapeHtml(cleanText(item.source_name))}</span>
+      </p>
+    `;
+  }
+
+  function renderSummary(item) {
+    const summary = sanitizeSummary(item);
+    if (item.item_type === "update") {
+      return `<p class="item-card__summary"><span class="item-card__summary-prefix">What changed:</span> ${escapeHtml(summary)}</p>`;
+    }
+
+    if (item.item_type === "news") {
+      return `<p class="item-card__summary">${escapeHtml(summary)}</p>`;
+    }
+
+    return `<p class="item-card__summary">${escapeHtml(summary)}</p>`;
+  }
+
+  function renderItemCard(item) {
+    const tone =
+      item.item_type === "status"
+        ? ` item-card--${slug(item.status_label || "stable")}`
+        : item.item_type === "update"
+          ? ` item-card--${slug(item.significance_tag || "minor")}`
+          : "";
+
+    return `
+      <article class="item-card item-card--${escapeHtml(item.item_type)}${tone}">
+        <div class="item-card__topline">${renderBadge(item)}</div>
+        <h4 class="item-card__headline">
+          <a href="${escapeHtml(item.source_url)}" target="_top" rel="noopener">${escapeHtml(sanitizeHeadline(item))}</a>
+        </h4>
+        ${renderSourceForward(item)}
+        ${renderSummary(item)}
+        <div class="item-card__actions">
+          <a class="item-card__source-link" href="${escapeHtml(item.source_url)}" target="_top" rel="noopener">Open source</a>
+          <span class="item-card__source-meta">${escapeHtml(cleanText(item.source_name))}</span>
+        </div>
+        <div class="item-card__footer">
+          <div class="metadata-row">
+            <span class="metadata-pill">
+              <span class="metadata-pill__label">Source</span>
+              <a href="${escapeHtml(item.source_url)}" target="_top" rel="noopener">${escapeHtml(cleanText(item.source_name))}</a>
+            </span>
+            <span class="metadata-pill">
+              <span class="metadata-pill__label">Published</span>
+              <span>${escapeHtml(formatDate(item.published_at))}</span>
+            </span>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderColumn(section, column) {
+    const stateCard = renderStateCard(section, column);
+    const items = (column.items || []).map(renderItemCard).join("");
+    return `
+      <div role="listitem">
+        <article class="column-card" aria-label="${escapeHtml(column.label)}">
+          <header class="column-card__header">
+            <h3 tabindex="-1">${escapeHtml(column.label)}</h3>
+          </header>
+          <div class="column-card__body">
+            ${stateCard}
+            ${items}
+          </div>
+        </article>
+      </div>
+    `;
+  }
+
+  function renderSection(section, index) {
+    const eyebrowMap = {
+      llm_status: "Operational Health",
+      llm_model_updates: "Product Change",
+      news: "Market Context"
+    };
+    const guidanceMap = {
+      llm_status: "Use this band to answer: is the tool stable, degraded, or having real service trouble right now?",
+      llm_model_updates: "Use this band to answer: what did the provider officially change, and why might it matter to your workflow?",
+      news: "Use this band when you want broader business and investing context beyond provider-specific status and releases."
+    };
+    const toneClass = section.section_key === "news" ? "section-shell--secondary section-shell--news" :
+      section.section_key === "llm_model_updates" ? "section-shell--primary section-shell--updates" :
+      "section-shell--primary section-shell--status";
+    const sectionNotice = sectionHasMixedFreshness(section)
+      ? '<p class="section-shell__notice">Some news categories refreshed in this window. Any delayed column below is still showing its last verified items.</p>'
+      : "";
+
+    return `
+      <section class="section-shell ${toneClass}" aria-label="${escapeHtml(section.title)}" aria-roledescription="information section">
+        <header class="section-shell__header">
+          <div class="section-shell__eyebrow-row">
+            <p class="section-shell__eyebrow">${escapeHtml(eyebrowMap[section.section_key] || section.title)}</p>
+            <span class="section-shell__ordinal">${String(index + 1).padStart(2, "0")}</span>
+          </div>
+          <h2>${escapeHtml(section.title)}</h2>
+          <p>${escapeHtml(section.description)}</p>
+          <p class="section-shell__guidance">${escapeHtml(guidanceMap[section.section_key] || "")}</p>
+        </header>
+        <div class="section-shell__body">
+          ${sectionNotice}
+          <div class="section-grid" role="list" aria-label="${escapeHtml(section.title)} columns">
+            ${(section.columns || []).map((column) => renderColumn(section, column)).join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderDesk(snapshot) {
+    root.innerHTML = `
+      <main class="page-shell" id="desk-content">
+        <section class="intro-shell">
+          <div class="intro-shell__headline">
+            <div>
+              <p class="eyebrow">Answer Bar</p>
+              <h1>Intelligence Desk</h1>
+              <p class="intro-shell__lede">Use this page to check three things fast: whether a major AI tool is having issues, what providers officially changed, and which AI business stories are worth your time.</p>
+            </div>
+            <div class="freshness-card" aria-label="Last updated">
+              <span class="freshness-card__label">Last updated</span>
+              <strong>${escapeHtml(formatDate(snapshot.published_at || snapshot.generated_at))}</strong>
+            </div>
+          </div>
+          <div class="intro-shell__guidance">
+            <p><strong>Start here:</strong> Check "LLM Status" when a tool feels off, "LLM/Model Updates" when a provider ships something new, and "News" when you want the broader business view.</p>
+          </div>
+        </section>
+        ${(snapshot.sections || []).map(renderSection).join("")}
+      </main>
+    `;
+  }
+
+  function renderLoading() {
+    root.innerHTML = `
+      <main class="page-shell">
+        <section class="loading-card">
+          <span class="state-card__label">Loading</span>
+          <h2>Refreshing Intelligence Desk</h2>
+          <p>Pulling the latest snapshot now.</p>
+        </section>
+      </main>
+    `;
+  }
+
+  function renderConfigMessage() {
+    root.innerHTML = `
+      <main class="page-shell">
+        <section class="config-card">
+          <span class="state-card__label">Setup Needed</span>
+          <h2>Connect this block to a hosted snapshot</h2>
+          <p>Replace the placeholder snapshot URL in this HTML once, then Circle can load fresh data automatically without repasting the whole block.</p>
+          <code>${escapeHtml(placeholderUrl)}</code>
+        </section>
+      </main>
+    `;
+  }
+
+  function renderError(error) {
+    root.innerHTML = `
+      <main class="page-shell">
+        <section class="error-card">
+          <span class="state-card__label">Refresh Failed</span>
+          <h2>Could not load the latest snapshot</h2>
+          <p>${escapeHtml(error && error.message ? error.message : "Unknown error")}</p>
+          <code>${escapeHtml(snapshotUrl)}</code>
+        </section>
+      </main>
+    `;
+  }
+
+  async function loadSnapshot() {
+    if (useBootstrapSnapshot && bootstrapSnapshot) {
+      renderDesk(bootstrapSnapshot);
+      return;
+    }
+
+    if (!snapshotUrl || snapshotUrl === placeholderUrl) {
+      renderConfigMessage();
+      return;
+    }
+
+    renderLoading();
+
+    try {
+      const response = await fetch(snapshotUrl, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error("Snapshot request returned HTTP " + response.status + ".");
+      }
+
+      const snapshot = await response.json();
+      renderDesk(snapshot);
+    } catch (error) {
+      renderError(error);
+    }
+  }
+
+  loadSnapshot();
+  if (!useBootstrapSnapshot) {
+    setInterval(loadSnapshot, refreshIntervalMs);
+  }
+})();</script></body></html>
